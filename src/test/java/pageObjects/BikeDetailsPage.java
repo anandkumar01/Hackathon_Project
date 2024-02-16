@@ -3,7 +3,6 @@ package pageObjects;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Properties;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class BikeDetailsPage extends BasePage {
-
-	Properties p;
 
 	public BikeDetailsPage(WebDriver driver) {
 		super(driver);

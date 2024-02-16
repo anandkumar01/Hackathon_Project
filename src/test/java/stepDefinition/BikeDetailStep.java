@@ -27,7 +27,6 @@ public class BikeDetailStep {
 	@When("user hover on New Bikes")
 	public void user_hover_on_new_bikes() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
-//		Thread.sleep(10000);
 		bike.hoverNewBikes();
 	}
 
