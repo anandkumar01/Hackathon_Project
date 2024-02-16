@@ -93,7 +93,6 @@ public class BikeDetailsPage extends BasePage {
 				bikeDetailsMap.put(bikeDetailsKey, detailsList);
 			}
 		}
-
 		return bikeDetailsMap;
 	}
 

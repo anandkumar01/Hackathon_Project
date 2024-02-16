@@ -1,5 +1,8 @@
 package stepDefinition;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
@@ -7,11 +10,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.BikeDetailsPage;
+import utilities.WriteExcelData;
 
 public class BikeDetailStep {
 
 	WebDriver driver;
 	BikeDetailsPage bike;
+	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
 	@Given("user navigates to zigwheels website")
 	public void user_navigates_to_zigwheels_website() {
@@ -43,6 +48,9 @@ public class BikeDetailStep {
 		// Write code here that turns the phrase above into concrete actions
 		bike.scrollToViewMore();
 		bike.printUpcomingBikeDetails();
+
+		LinkedHashMap<String, List<String>> bikeDetailsMap = bike.getUpcomingBikeDetails();
+		WriteExcelData.writeBikeDetails(bikeDetailsMap, filePath);
 	}
 
 }
