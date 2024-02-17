@@ -42,7 +42,7 @@ public class BikeDetailStep {
 		bike.selectManufacturer();
 	}
 
-	@Then("user display all upcoming boke details")
+	@Then("user display all upcoming bike details")
 	public void user_display_all_upcoming_boke_details() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
 		bike.scrollToViewMore();

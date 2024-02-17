@@ -22,6 +22,9 @@ public class WriteExcelData {
 	public static XSSFSheet carsheet = workbook.createSheet("PopularCarModels");
 	public static XSSFRow headerRow2 = carsheet.createRow(0);
 
+	public static XSSFSheet carSheet = workbook.createSheet("CarDetails");
+	public static XSSFRow headerRow3 = carSheet.createRow(0);
+
 	private static void setHeaderStyle(XSSFRow headerRow, int colIndex, String headerName) {
 		CellStyle style = workbook.createCellStyle();
 		style.setFillBackgroundColor(IndexedColors.GREEN.getIndex());
@@ -95,6 +98,45 @@ public class WriteExcelData {
 			// Auto-fit column width implementation
 			for (int i = 0; i < headerRow2.getLastCellNum(); i++) {
 				carsheet.autoSizeColumn(i);
+			}
+
+			// writing data in the excel sheet
+			try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+				workbook.write(fileOut);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeCarDetails(LinkedHashMap<String, List<String>> carDetails, String filePath) {
+		try {
+			headerRow3 = carSheet.getRow(0);
+
+			setHeaderStyle(headerRow3, 0, "Car Name");
+			setHeaderStyle(headerRow3, 1, "Car Price");
+			setHeaderStyle(headerRow3, 2, "Launch Date");
+
+			int rowNum = 1;
+			for (List<String> detailsList : carDetails.values()) {
+				XSSFRow row = carSheet.createRow(rowNum++);
+
+				int cellNum = 0;
+				for (String detail : detailsList) {
+					XSSFCell cell = row.createCell(cellNum++);
+					if (cellNum == 3) {
+						String det = detail.substring(14, detail.length());
+						cell.setCellValue(det);
+					} else {
+						cell.setCellValue(detail);
+					}
+				}
+			}
+
+			// Auto-fit column width implementation
+			for (int i = 0; i < headerRow3.getLastCellNum(); i++) {
+				carSheet.autoSizeColumn(i);
 			}
 
 			// writing data in the excel sheet

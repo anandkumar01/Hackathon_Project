@@ -5,4 +5,4 @@ Feature: Upcoming Bike Details
     When user hover on New Bikes
     Then user clicks on Upcoming Bikes
     When user selects manufacturer name
-    Then user display all upcoming boke details
+    Then user display all upcoming bike details
