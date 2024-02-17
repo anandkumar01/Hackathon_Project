@@ -13,6 +13,8 @@ public class InvalidGoogleLoginPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	String winHandleBefore;
+
 	@FindBy(xpath = "//div[@id='des_lIcon']")
 	WebElement loginbutton;
 
@@ -21,6 +23,9 @@ public class InvalidGoogleLoginPage extends BasePage {
 
 	@FindBy(xpath = "//input[@type='email']")
 	WebElement emailinput;
+
+	@FindBy(xpath = "//span[contains(text(), 'Next')]")
+	WebElement nextbutton;
 
 	@FindBy(xpath = "//div[@jsname='B34EJ']/div")
 	WebElement errormessage;
@@ -36,11 +41,24 @@ public class InvalidGoogleLoginPage extends BasePage {
 	public void enterRandomEmail() {
 		Random randomGenerator = new Random();
 		int randomInt = randomGenerator.nextInt(1000);
-		emailinput.sendKeys("username" + randomInt + "@gmail.com");
+
+		// Store the current window handle
+		winHandleBefore = driver.getWindowHandle();
+
+		// Perform the click operation that opens new window
+		// Switch to new window opened
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+		emailinput.sendKeys("username" + randomInt + "@gmail,com");
+		nextbutton.click();
 	}
 
 	public void printErrorMessage() {
 		String message = errormessage.getText();
-		System.out.println("\n" + message);
+		System.out.println("\nError message displayed : " + message);
+
+		// Switch back to original browser (first window)
+		driver.switchTo().window(winHandleBefore);
 	}
 }
