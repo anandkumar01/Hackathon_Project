@@ -30,7 +30,8 @@ public class UsedCarPage extends BasePage {
 	@FindBy(xpath = "//li[starts-with(@id, 'mmvLi')]//label")
 	List<WebElement> popularcarmodel;
 
-	public void hoverUsedCars() {
+	public void hoverUsedCars() throws InterruptedException {
+		Thread.sleep(10000);
 		Actions action = new Actions(driver);
 		action.moveToElement(usedcar).build().perform();
 	}

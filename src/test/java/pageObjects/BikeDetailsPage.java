@@ -44,7 +44,8 @@ public class BikeDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> bikelaunchdate;
 
-	public void hoverNewBikes() {
+	public void hoverNewBikes() throws InterruptedException {
+		Thread.sleep(10000);
 		Actions action = new Actions(driver);
 		action.moveToElement(newbikes).build().perform();
 	}

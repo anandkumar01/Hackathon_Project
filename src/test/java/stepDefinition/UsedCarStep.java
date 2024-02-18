@@ -17,7 +17,7 @@ public class UsedCarStep {
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
 	@When("user hover on Used Cars")
-	public void user_hover_on_used_cars() {
+	public void user_hover_on_used_cars() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
 		car = new UsedCarPage(BaseClass.getDriver());
 		car.hoverUsedCars();

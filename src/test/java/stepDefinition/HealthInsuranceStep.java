@@ -30,18 +30,6 @@ public class HealthInsuranceStep {
 		health.fillBasicDetails();
 	}
 
-	@When("user clicks on View Plans")
-	public void user_clicks_on_view_plans() {
-		// Write code here that turns the phrase above into concrete actions
-
-	}
-
-	@When("user checks required details")
-	public void user_checks_required_details() {
-		// Write code here that turns the phrase above into concrete actions
-
-	}
-
 	@Then("user store all health insurance plan")
 	public void user_store_all_health_insurance_plan() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions

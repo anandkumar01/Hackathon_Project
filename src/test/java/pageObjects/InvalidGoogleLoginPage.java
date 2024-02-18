@@ -34,7 +34,8 @@ public class InvalidGoogleLoginPage extends BasePage {
 		loginbutton.click();
 	}
 
-	public void clickGoogleAccount() {
+	public void clickGoogleAccount() throws InterruptedException {
+		Thread.sleep(5000);
 		google.click();
 	}
 

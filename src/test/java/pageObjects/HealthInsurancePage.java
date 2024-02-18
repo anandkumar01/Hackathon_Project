@@ -113,7 +113,7 @@ public class HealthInsurancePage extends BasePage {
 
 	public List<String> getHealthInsuranceBrandName() throws InterruptedException {
 		brandName.clear();
-		Thread.sleep(5000);
+		Thread.sleep(20000);
 		for (WebElement ele : brandname) {
 			String brand = ele.getText();
 			brandName.add(brand);
