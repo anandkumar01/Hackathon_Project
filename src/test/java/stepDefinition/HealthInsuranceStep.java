@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,7 @@ public class HealthInsuranceStep {
 	}
 
 	@Then("user fill details")
-	public void user_fill_details() throws InterruptedException {
+	public void user_fill_details() throws InterruptedException, IOException {
 		// Write code here that turns the phrase above into concrete actions
 		health.fillBasicDetails();
 	}

@@ -1,7 +1,9 @@
 package pageObjects;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +11,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
+import factory.BaseClass;
+
 public class HealthInsurancePage extends BasePage {
+	Properties p;
 
 	public HealthInsurancePage(WebDriver driver) {
 		super(driver);
@@ -89,11 +94,12 @@ public class HealthInsurancePage extends BasePage {
 		js.executeScript("arguments[0].scrollIntoView();", scroll);
 	}
 
-	public void fillBasicDetails() throws InterruptedException {
+	public void fillBasicDetails() throws InterruptedException, IOException {
+		p = BaseClass.getProperties();
 		scrollToViewMore();
 		checkmale.click();
-		inputname.sendKeys("Anand");
-		inputphone.sendKeys("9876543210");
+		inputname.sendKeys(p.getProperty("name"));
+		inputphone.sendKeys(p.getProperty("phone"));
 		Thread.sleep(3000);
 		viewplan.click();
 
@@ -103,7 +109,7 @@ public class HealthInsurancePage extends BasePage {
 
 		clickage.click();
 		selectage.click();
-		inputpincode.sendKeys("603103");
+		inputpincode.sendKeys(p.getProperty("pincode"));
 		Thread.sleep(1000);
 		continueBtn.click();
 
@@ -117,7 +123,7 @@ public class HealthInsurancePage extends BasePage {
 
 	public List<String> getHealthInsuranceBrandName() throws InterruptedException {
 		brandName.clear();
-		Thread.sleep(20000);
+		Thread.sleep(25000);
 		for (WebElement ele : brandname) {
 			String brand = ele.getText();
 			brandName.add(brand);
