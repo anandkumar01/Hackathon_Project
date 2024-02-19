@@ -5,4 +5,5 @@ Feature: Health Insurance
     When user hover on More section
     And user clicks on Health Insurance
     Then user fill details
-    And user store all health insurance plan
+    And user display all health insurance brand name
+    And user display all health insurance plan

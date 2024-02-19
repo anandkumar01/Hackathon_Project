@@ -17,6 +17,7 @@ public class HealthInsurancePage extends BasePage {
 	}
 
 	List<String> brandName = new ArrayList<>();
+	List<String> insurancePlan = new ArrayList<>();
 
 	@FindBy(xpath = "//div[@id=\"headerNewNavWrap\"]//li[9]/a")
 	WebElement moresection;
@@ -65,6 +66,9 @@ public class HealthInsurancePage extends BasePage {
 
 	@FindBy(xpath = "//div[starts-with(@class, 'quotesListWrapper')]/div/div/div[2]/div/div/h2/../div[1]")
 	List<WebElement> brandname;
+
+	@FindBy(xpath = "//div[starts-with(@class, 'quotesListWrapper')]/div/div/div[2]/div/div[2]/div[2]/div//button/span")
+	List<WebElement> insuranceplan;
 
 	@FindBy(xpath = "//div[@class='viewMorePlan']")
 	List<WebElement> allscroll;
@@ -125,6 +129,22 @@ public class HealthInsurancePage extends BasePage {
 		List<String> brandName = getHealthInsuranceBrandName();
 		for (int i = 0; i < brandName.size(); i++) {
 			System.out.println((i + 1) + ". " + brandName.get(i));
+		}
+	}
+
+	public List<String> getInsurancePlan() {
+		insurancePlan.clear();
+		for (WebElement ele : insuranceplan) {
+			String plan = ele.getText();
+			insurancePlan.add(plan);
+		}
+		return insurancePlan;
+	}
+
+	public void printInsurancePlan() {
+		List<String> insurancePlan = getInsurancePlan();
+		for (int i = 0; i < insurancePlan.size(); i++) {
+			System.out.println((i + 1) + ". " + insurancePlan.get(i));
 		}
 	}
 

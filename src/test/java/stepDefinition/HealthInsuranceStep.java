@@ -1,15 +1,19 @@
 package stepDefinition;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HealthInsurancePage;
+import utilities.WriteExcelData;
 
 public class HealthInsuranceStep {
 	WebDriver driver;
 	HealthInsurancePage health;
+	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
 	@When("user hover on More section")
 	public void user_hover_on_more_section() throws InterruptedException {
@@ -30,10 +34,20 @@ public class HealthInsuranceStep {
 		health.fillBasicDetails();
 	}
 
-	@Then("user store all health insurance plan")
-	public void user_store_all_health_insurance_plan() throws InterruptedException {
+	@Then("user display all health insurance brand name")
+	public void user_display_all_health_insurance_brand_name() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
 		health.printHealthInsuranceBrandName();
+		List<String> insuranceBrandName = health.getHealthInsuranceBrandName();
+		WriteExcelData.writeHealthInsuranceBrandName(insuranceBrandName, filePath);
+	}
+
+	@Then("user display all health insurance plan")
+	public void user_display_all_health_insurance_plan() {
+		// Write code here that turns the phrase above into concrete actions
+		health.printInsurancePlan();
+		List<String> insurancePlan = health.getInsurancePlan();
+		WriteExcelData.writeHealthInsurancePlan(insurancePlan, filePath);
 	}
 
 }

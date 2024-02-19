@@ -25,6 +25,9 @@ public class WriteExcelData {
 	public static XSSFSheet carSheet = workbook.createSheet("CarDetails");
 	public static XSSFRow headerRow3 = carSheet.createRow(0);
 
+	public static XSSFSheet healthSheet = workbook.createSheet("HealthInsurance");
+	public static XSSFRow headerRow4 = healthSheet.createRow(0);
+
 	private static void setHeaderStyle(XSSFRow headerRow, int colIndex, String headerName) {
 		CellStyle style = workbook.createCellStyle();
 		style.setFillBackgroundColor(IndexedColors.GREEN.getIndex());
@@ -137,6 +140,72 @@ public class WriteExcelData {
 			// Auto-fit column width implementation
 			for (int i = 0; i < headerRow3.getLastCellNum(); i++) {
 				carSheet.autoSizeColumn(i);
+			}
+
+			// writing data in the excel sheet
+			try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+				workbook.write(fileOut);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeHealthInsuranceBrandName(List<String> insuranceBrandName, String filePath) {
+		try {
+			headerRow4 = healthSheet.getRow(0);
+
+			setHeaderStyle(headerRow4, 0, "Health Insurance Brand Name");
+
+			for (int i = 0; i < insuranceBrandName.size(); i++) {
+				XSSFRow row = healthSheet.getRow(i + 1);
+
+				// if row doesn't exist, create a new one
+				if (row == null) {
+					row = healthSheet.createRow(i + 1);
+				}
+
+				// use cell index 0 to write in the first column
+				row.createCell(0).setCellValue(insuranceBrandName.get(i));
+			}
+
+			// Auto-fit column width implementation
+			for (int i = 0; i < headerRow4.getLastCellNum(); i++) {
+				healthSheet.autoSizeColumn(i);
+			}
+
+			// writing data in the excel sheet
+			try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+				workbook.write(fileOut);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void writeHealthInsurancePlan(List<String> insurancePlan, String filePath) {
+		try {
+			headerRow4 = healthSheet.getRow(0);
+
+			setHeaderStyle(headerRow4, 1, "Health Insurance Plan");
+
+			for (int i = 0; i < insurancePlan.size(); i++) {
+				XSSFRow row = healthSheet.getRow(i + 1);
+
+				// if row doesn't exist, create a new one
+				if (row == null) {
+					row = healthSheet.createRow(i + 1);
+				}
+
+				// use cell index 0 to write in the first column
+				row.createCell(1).setCellValue(insurancePlan.get(i));
+			}
+
+			// Auto-fit column width implementation
+			for (int i = 0; i < headerRow4.getLastCellNum(); i++) {
+				healthSheet.autoSizeColumn(i);
 			}
 
 			// writing data in the excel sheet
