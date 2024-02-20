@@ -18,7 +18,7 @@ public class CarDetailStep {
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
 	@When("user hover on New Cars")
-	public void user_hover_on_new_cars() throws InterruptedException {
+	public void user_hover_on_new_cars() {
 		// Write code here that turns the phrase above into concrete actions
 		car = new CarDetailsPage(BaseClass.getDriver());
 		car.hoverNewCars();
@@ -37,7 +37,7 @@ public class CarDetailStep {
 	}
 
 	@Then("user display all upcoming car details")
-	public void user_display_all_upcoming_car_details() throws InterruptedException {
+	public void user_display_all_upcoming_car_details() {
 		// Write code here that turns the phrase above into concrete actions
 		car.scrollToViewMore();
 		car.printUpcomingCarDetails();

@@ -25,7 +25,7 @@ public class BikeDetailStep {
 	}
 
 	@When("user hover on New Bikes")
-	public void user_hover_on_new_bikes() throws InterruptedException {
+	public void user_hover_on_new_bikes() {
 		// Write code here that turns the phrase above into concrete actions
 		bike.hoverNewBikes();
 	}
@@ -43,7 +43,7 @@ public class BikeDetailStep {
 	}
 
 	@Then("user display all upcoming bike details")
-	public void user_display_all_upcoming_boke_details() throws InterruptedException {
+	public void user_display_all_upcoming_boke_details() {
 		// Write code here that turns the phrase above into concrete actions
 		bike.scrollToViewMore();
 		bike.printUpcomingBikeDetails();

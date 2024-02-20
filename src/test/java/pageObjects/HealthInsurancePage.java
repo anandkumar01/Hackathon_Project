@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -10,11 +11,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import factory.BaseClass;
 
 public class HealthInsurancePage extends BasePage {
-	Properties p;
+	Properties property;
 
 	public HealthInsurancePage(WebDriver driver) {
 		super(driver);
@@ -82,18 +85,23 @@ public class HealthInsurancePage extends BasePage {
 	@FindBy(xpath = "//div[@class='viewMorePlan']")
 	List<WebElement> allscroll;
 
+	public void explicitWait(WebElement element) {
+		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(d -> element.isDisplayed());
+	}
+
 	public void hoverOnElement(WebElement element) {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
 
-	public void hoverMore() throws InterruptedException {
-		Thread.sleep(10000);
+	public void hoverMore() {
+		explicitWait(moresection);
 		hoverOnElement(moresection);
 	}
 
-	public void clickHealthInsurance() throws InterruptedException {
-		Thread.sleep(2000);
+	public void clickHealthInsurance() {
+		explicitWait(healthinsurance);
 		healthinsurance.click();
 	}
 
@@ -102,26 +110,27 @@ public class HealthInsurancePage extends BasePage {
 		js.executeScript("arguments[0].scrollIntoView();", scroll);
 	}
 
-	public void fillBasicDetails() throws InterruptedException, IOException {
-		p = BaseClass.getProperties();
+	public void fillBasicDetails() throws IOException, InterruptedException {
+		property = BaseClass.getProperties();
 		scrollToViewMore();
 		checkmale.click();
-		inputname.sendKeys(p.getProperty("name"));
-		inputphone.sendKeys(p.getProperty("phone"));
-		Thread.sleep(3000);
+		inputname.sendKeys(property.getProperty("name"));
+		inputphone.sendKeys(property.getProperty("phone"));
+
+		Thread.sleep(5000);
 		viewplan.click();
 
-		Thread.sleep(3000);
+		explicitWait(checkyou);
 		checkyou.click();
 		continuebtn.click();
 
 		clickage.click();
 		selectage.click();
-		inputpincode.sendKeys(p.getProperty("pincode"));
-		Thread.sleep(1000);
+		inputpincode.sendKeys(property.getProperty("pincode"));
+		explicitWait(continueBtn);
 		continueBtn.click();
 
-		Thread.sleep(3000);
+		explicitWait(checkbox);
 		if (checkbox.isEnabled()) {
 			continuebtnn.click();
 		} else {

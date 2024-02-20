@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class UsedCarPage extends BasePage {
 
@@ -33,13 +36,18 @@ public class UsedCarPage extends BasePage {
 	@FindBy(xpath = "//li[starts-with(@id, 'mmvLi')]//label")
 	List<WebElement> popularcarmodel;
 
+	public void explicitWait(WebElement element) {
+		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(d -> element.isDisplayed());
+	}
+
 	public void hoverOnElement(WebElement element) {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
 
-	public void hoverUsedCars() throws InterruptedException {
-		Thread.sleep(10000);
+	public void hoverUsedCars() {
+		explicitWait(usedcar);
 		hoverOnElement(usedcar);
 	}
 

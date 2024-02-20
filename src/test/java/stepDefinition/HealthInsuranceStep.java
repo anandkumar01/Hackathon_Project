@@ -17,14 +17,14 @@ public class HealthInsuranceStep {
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
 	@When("user hover on More section")
-	public void user_hover_on_more_section() throws InterruptedException {
+	public void user_hover_on_more_section() {
 		// Write code here that turns the phrase above into concrete actions
 		health = new HealthInsurancePage(BaseClass.getDriver());
 		health.hoverMore();
 	}
 
 	@When("user clicks on Health Insurance")
-	public void user_clicks_on_health_insurance() throws InterruptedException {
+	public void user_clicks_on_health_insurance() {
 		// Write code here that turns the phrase above into concrete actions
 		health.clickHealthInsurance();
 	}

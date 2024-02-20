@@ -19,7 +19,7 @@ public class InvalidGoogleLoginStep {
 	}
 
 	@Then("user clicks to the google option")
-	public void user_clicks_to_the_google_option() throws InterruptedException {
+	public void user_clicks_to_the_google_option() {
 		// Write code here that turns the phrase above into concrete actions
 		login.clickGoogleAccount();
 	}
