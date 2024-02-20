@@ -16,8 +16,10 @@ public class UsedCarPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Initialising list to store all popular car model name
 	List<String> popularCarModels = new ArrayList<>();
 
+	// Web elements for different functionality
 	@FindBy(xpath = "//a[contains(text(), \'Used Cars\')]")
 	WebElement usedcar;
 
@@ -27,13 +29,18 @@ public class UsedCarPage extends BasePage {
 	@FindBy(xpath = "//div[contains(text(), 'Popular Models')]")
 	WebElement scroll;
 
+	// Storing list of web elements for popular car model
 	@FindBy(xpath = "//li[starts-with(@id, 'mmvLi')]//label")
 	List<WebElement> popularcarmodel;
 
+	public void hoverOnElement(WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
+	}
+
 	public void hoverUsedCars() throws InterruptedException {
 		Thread.sleep(10000);
-		Actions action = new Actions(driver);
-		action.moveToElement(usedcar).build().perform();
+		hoverOnElement(usedcar);
 	}
 
 	public void clickChennai() {

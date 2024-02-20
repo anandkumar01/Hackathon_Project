@@ -18,8 +18,10 @@ public class BikeDetailsPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Initialising LinkedHashMap to store bike details in ordered way
 	LinkedHashMap<String, List<String>> bikeDetailsMap = new LinkedHashMap<>();
 
+	// Web elements for different functionality
 	@FindBy(xpath = "//a[contains(text(), \"New Bikes\")]")
 	WebElement newbikes;
 
@@ -35,19 +37,26 @@ public class BikeDetailsPage extends BasePage {
 	@FindBy(xpath = "//span[@class='zw-cmn-loadMore']")
 	WebElement viewmore;
 
+	// Storing list of web elements for bike name
 	@FindBy(xpath = "//a[@data-track-label='model-name']")
 	List<WebElement> bikenames;
 
+	// Storing list of web elements for bike price
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[1]")
 	List<WebElement> bikeprices;
 
+	// Storing list of web elements for bike launch date
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> bikelaunchdate;
 
+	public void hoverOnElement(WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
+	}
+
 	public void hoverNewBikes() throws InterruptedException {
 		Thread.sleep(10000);
-		Actions action = new Actions(driver);
-		action.moveToElement(newbikes).build().perform();
+		hoverOnElement(newbikes);
 	}
 
 	public void clickUpcomingBikes() {
@@ -57,7 +66,6 @@ public class BikeDetailsPage extends BasePage {
 	public void selectManufacturer() {
 		Select select = new Select(selectmanufacturer);
 		select.selectByVisibleText("Honda");
-
 	}
 
 	public void scrollToViewMore() throws InterruptedException {
@@ -97,7 +105,7 @@ public class BikeDetailsPage extends BasePage {
 	public void printUpcomingBikeDetails() {
 		LinkedHashMap<String, List<String>> bikeDetails = getUpcomingBikeDetails();
 
-		System.out.println("All upcoming bike details under 4 Lacks :");
+		System.out.println("All upcoming bike details under 4 Lacks are displayed below :");
 		int i = 1;
 		for (String key : bikeDetails.keySet()) {
 			List<String> detailsList = bikeDetails.get(key);
@@ -105,5 +113,4 @@ public class BikeDetailsPage extends BasePage {
 			i++;
 		}
 	}
-
 }

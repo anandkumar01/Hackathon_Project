@@ -15,6 +15,7 @@ public class InvalidGoogleLoginPage extends BasePage {
 
 	String winHandleBefore;
 
+	// Web elements for different functionality
 	@FindBy(xpath = "//div[@id='des_lIcon']")
 	WebElement loginbutton;
 

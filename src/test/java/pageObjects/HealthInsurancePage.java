@@ -21,9 +21,11 @@ public class HealthInsurancePage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Initialising lists to store Health Insurance brand name and plan
 	List<String> brandName = new ArrayList<>();
 	List<String> insurancePlan = new ArrayList<>();
 
+	// Web elements for different functionality
 	@FindBy(xpath = "//div[@id=\"headerNewNavWrap\"]//li[9]/a")
 	WebElement moresection;
 
@@ -69,19 +71,25 @@ public class HealthInsurancePage extends BasePage {
 	@FindBy(xpath = "//button[@class='button  ']")
 	WebElement continuebtnn;
 
+	// Storing list of web elements for brand name
 	@FindBy(xpath = "//div[starts-with(@class, 'quotesListWrapper')]/div/div/div[2]/div/div/h2/../div[1]")
 	List<WebElement> brandname;
 
+	// Storing list of web elements for insurance plan
 	@FindBy(xpath = "//div[starts-with(@class, 'quotesListWrapper')]/div/div/div[2]/div/div[2]/div[2]/div//button/span")
 	List<WebElement> insuranceplan;
 
 	@FindBy(xpath = "//div[@class='viewMorePlan']")
 	List<WebElement> allscroll;
 
+	public void hoverOnElement(WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
+	}
+
 	public void hoverMore() throws InterruptedException {
 		Thread.sleep(10000);
-		Actions action = new Actions(driver);
-		action.moveToElement(moresection).build().perform();
+		hoverOnElement(moresection);
 	}
 
 	public void clickHealthInsurance() throws InterruptedException {
@@ -133,6 +141,7 @@ public class HealthInsurancePage extends BasePage {
 
 	public void printHealthInsuranceBrandName() throws InterruptedException {
 		List<String> brandName = getHealthInsuranceBrandName();
+		System.out.println("\nAll Health Insurance plan are displayed below :");
 		for (int i = 0; i < brandName.size(); i++) {
 			System.out.println((i + 1) + ". " + brandName.get(i));
 		}
@@ -149,6 +158,7 @@ public class HealthInsurancePage extends BasePage {
 
 	public void printInsurancePlan() {
 		List<String> insurancePlan = getInsurancePlan();
+		System.out.println("\nAll Health Insurance brand name are displayed below :");
 		for (int i = 0; i < insurancePlan.size(); i++) {
 			System.out.println((i + 1) + ". " + insurancePlan.get(i));
 		}

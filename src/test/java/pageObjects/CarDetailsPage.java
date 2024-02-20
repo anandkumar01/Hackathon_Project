@@ -18,8 +18,10 @@ public class CarDetailsPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Initialising LinkedHashMap to store car details in ordered way
 	LinkedHashMap<String, List<String>> carDetailsMap = new LinkedHashMap<>();
 
+	// Web elements for different functionality
 	@FindBy(xpath = "//a[contains(text(), \"New Cars\")]")
 	WebElement newcars;
 
@@ -35,19 +37,26 @@ public class CarDetailsPage extends BasePage {
 	@FindBy(xpath = "//span[@class='zw-cmn-loadMore']")
 	WebElement viewmore;
 
+	// Storing list of web elements for car name
 	@FindBy(xpath = "//a[@data-track-label='model-name']")
 	List<WebElement> carnames;
 
+	// Storing list of web elements for car price
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[1]")
 	List<WebElement> carprices;
 
+	// Storing list of web elements for car launch date
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> carlaunchdate;
 
+	public void hoverOnElement(WebElement element) {
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
+	}
+
 	public void hoverNewCars() throws InterruptedException {
 		Thread.sleep(10000);
-		Actions action = new Actions(driver);
-		action.moveToElement(newcars).build().perform();
+		hoverOnElement(newcars);
 	}
 
 	public void clickUpcomingCars() {
@@ -57,7 +66,6 @@ public class CarDetailsPage extends BasePage {
 	public void selectManufacturer() {
 		Select select = new Select(selectmanufacturer);
 		select.selectByVisibleText("Tata");
-
 	}
 
 	public void scrollToViewMore() throws InterruptedException {
@@ -79,7 +87,7 @@ public class CarDetailsPage extends BasePage {
 			detailsList.add(carprice);
 			detailsList.add(launchdate);
 
-			// Use 'Bikedetails' as the key and the list of details as the value
+			// Use 'Cardetails' as the key and the list of details as the value
 			String carDetailsKey = "CarDetails" + (i + 1);
 			carDetailsMap.put(carDetailsKey, detailsList);
 
@@ -90,7 +98,7 @@ public class CarDetailsPage extends BasePage {
 	public void printUpcomingCarDetails() {
 		LinkedHashMap<String, List<String>> carDetails = getUpcomingCarDetails();
 
-		System.out.println("\nAll upcoming car details :");
+		System.out.println("\nAll upcoming car details are displayed below :");
 		int i = 1;
 		for (String key : carDetails.keySet()) {
 			List<String> detailsList = carDetails.get(key);
@@ -98,5 +106,4 @@ public class CarDetailsPage extends BasePage {
 			i++;
 		}
 	}
-
 }

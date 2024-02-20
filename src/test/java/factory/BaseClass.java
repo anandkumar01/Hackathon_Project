@@ -2,7 +2,6 @@ package factory;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -10,44 +9,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BaseClass {
 
 	static WebDriver driver;
-	static Properties p;
+	static Properties property;
 
 	public static WebDriver initilizeBrowser() throws IOException {
-		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote")) {
-			DesiredCapabilities capabilities = new DesiredCapabilities();
-
-			// browser
-			switch (getProperties().getProperty("browser").toLowerCase()) {
-			case "chrome":
-				capabilities.setBrowserName("chrome");
-				break;
-			case "firefox":
-				capabilities.setBrowserName("firefox");
-				break;
-			default:
-				capabilities.setBrowserName("edge");
-				break;
-			}
-
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
-
-		} else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
-			switch (getProperties().getProperty("browser").toLowerCase()) {
-			case "chrome":
-				driver = new ChromeDriver();
-				break;
-			case "firefox":
-				driver = new FirefoxDriver();
-				break;
-			default:
-				driver = new EdgeDriver();
-			}
+		switch (getProperties().getProperty("browser").toLowerCase()) {
+		case "chrome":
+			driver = new ChromeDriver();
+			break;
+		case "firefox":
+			driver = new FirefoxDriver();
+			break;
+		default:
+			driver = new EdgeDriver();
 		}
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -63,8 +40,8 @@ public class BaseClass {
 		String propertyFile = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 		FileReader file = new FileReader(propertyFile);
 
-		p = new Properties();
-		p.load(file);
-		return p;
+		property = new Properties();
+		property.load(file);
+		return property;
 	}
 }

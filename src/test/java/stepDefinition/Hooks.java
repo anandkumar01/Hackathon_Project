@@ -11,13 +11,13 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 	WebDriver driver;
-	Properties p;
+	Properties property;
 
 	@Before
 	public void setup() throws IOException {
-		p = BaseClass.getProperties();
+		property = BaseClass.getProperties();
 		driver = BaseClass.initilizeBrowser();
-		driver.get(p.getProperty("baseUrl"));
+		driver.get(property.getProperty("baseUrl"));
 		driver.manage().window().maximize();
 	}
 
