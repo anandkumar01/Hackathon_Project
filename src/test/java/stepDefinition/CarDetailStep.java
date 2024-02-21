@@ -39,7 +39,7 @@ public class CarDetailStep {
 	@Then("user display all upcoming car details")
 	public void user_display_all_upcoming_car_details() {
 		// Write code here that turns the phrase above into concrete actions
-		car.scrollToViewMore();
+		car.clickToViewMore();
 		car.printUpcomingCarDetails();
 
 		LinkedHashMap<String, List<String>> carDetailsMap = car.getUpcomingCarDetails();

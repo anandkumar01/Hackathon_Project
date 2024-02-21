@@ -1,6 +1,5 @@
 package pageObjects;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -8,11 +7,8 @@ import java.util.List;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CarDetailsPage extends BasePage {
 
@@ -52,16 +48,6 @@ public class CarDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> carlaunchdate;
 
-	public void explicitWait(WebElement element) {
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(d -> element.isDisplayed());
-	}
-
-	public void hoverOnElement(WebElement element) {
-		Actions action = new Actions(driver);
-		action.moveToElement(element).build().perform();
-	}
-
 	public void hoverNewCars() {
 		explicitWait(newcars);
 		hoverOnElement(newcars);
@@ -76,10 +62,9 @@ public class CarDetailsPage extends BasePage {
 		select.selectByVisibleText("Tata");
 	}
 
-	public void scrollToViewMore() {
+	public void clickToViewMore() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", scroll);
-
+		scrollToElement(scroll);
 		explicitWait(viewmore);
 		js.executeScript("arguments[0].click();", viewmore);
 	}

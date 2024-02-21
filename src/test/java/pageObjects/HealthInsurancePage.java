@@ -1,18 +1,13 @@
 package pageObjects;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import factory.BaseClass;
 
@@ -85,16 +80,6 @@ public class HealthInsurancePage extends BasePage {
 	@FindBy(xpath = "//div[@class='viewMorePlan']")
 	List<WebElement> allscroll;
 
-	public void explicitWait(WebElement element) {
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(d -> element.isDisplayed());
-	}
-
-	public void hoverOnElement(WebElement element) {
-		Actions action = new Actions(driver);
-		action.moveToElement(element).build().perform();
-	}
-
 	public void hoverMore() {
 		explicitWait(moresection);
 		hoverOnElement(moresection);
@@ -105,14 +90,9 @@ public class HealthInsurancePage extends BasePage {
 		healthinsurance.click();
 	}
 
-	public void scrollToViewMore() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView();", scroll);
-	}
-
 	public void fillBasicDetails() throws IOException, InterruptedException {
 		property = BaseClass.getProperties();
-		scrollToViewMore();
+		scrollToElement(scroll);
 		checkmale.click();
 		inputname.sendKeys(property.getProperty("name"));
 		inputphone.sendKeys(property.getProperty("phone"));

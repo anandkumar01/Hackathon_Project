@@ -1,13 +1,11 @@
 package pageObjects;
 
-import java.time.Duration;
 import java.util.Random;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InvalidGoogleLoginPage extends BasePage {
 
@@ -34,18 +32,14 @@ public class InvalidGoogleLoginPage extends BasePage {
 	@FindBy(xpath = "//div[@jsname='B34EJ']/div")
 	WebElement errormessage;
 
-	public void explicitWait(WebElement element) {
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		wait.until(d -> element.isDisplayed());
-	}
-
 	public void clickLoginButton() {
 		loginbutton.click();
 	}
 
 	public void clickGoogleAccount() {
 		explicitWait(google);
-		google.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", google);
 	}
 
 	public void enterRandomEmail() {

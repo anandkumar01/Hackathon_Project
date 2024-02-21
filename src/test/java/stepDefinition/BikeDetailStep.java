@@ -45,7 +45,7 @@ public class BikeDetailStep {
 	@Then("user display all upcoming bike details")
 	public void user_display_all_upcoming_boke_details() {
 		// Write code here that turns the phrase above into concrete actions
-		bike.scrollToViewMore();
+		bike.clickToViewMore();
 		bike.printUpcomingBikeDetails();
 
 		LinkedHashMap<String, List<String>> bikeDetailsMap = bike.getUpcomingBikeDetails();
