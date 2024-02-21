@@ -3,6 +3,7 @@ package pageObjects;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +17,7 @@ public class UsedCarPage extends BasePage {
 
 	// Initialising list to store all popular car model name
 	List<String> popularCarModels = new ArrayList<>();
+	List<List<String>> carDetails = new ArrayList<>();
 
 	// Web elements for different functionality
 	@FindBy(xpath = "//a[contains(text(), \'Used Cars\')]")
@@ -24,12 +26,33 @@ public class UsedCarPage extends BasePage {
 	@FindBy(xpath = "//span[contains(text(), \'Chennai\')]")
 	WebElement chennai;
 
-	@FindBy(xpath = "//div[contains(text(), 'Popular Models')]")
+	@FindBy(xpath = "//span[contains(text(), 'Brand and Model')]")
 	WebElement scroll;
 
 	// Storing list of web elements for popular car model
 	@FindBy(xpath = "//li[starts-with(@id, 'mmvLi')]//label")
 	List<WebElement> popularcarmodel;
+
+	@FindBy(xpath = "//div[@class=\"gsc_thin_scroll\"]//input")
+	List<WebElement> allCheckbox;
+
+	@FindBy(xpath = "//div[@id=\"thatsAllFolks\"]")
+	WebElement lastscroll;
+
+	@FindBy(xpath = "//a[@data-track-label=\"Car-name\"]")
+	List<WebElement> carNames;
+
+	@FindBy(xpath = "//span[starts-with(@class,'zw-cmn-price')]")
+	List<WebElement> carPrices;
+
+	@FindBy(xpath = "//li[@itemprop='fuelType']")
+	List<WebElement> fuelTypes;
+
+	@FindBy(xpath = "//li[@itemprop='fuelType']/following-sibling::li[1]")
+	List<WebElement> kilometers;
+
+	@FindBy(xpath = "//li[@itemprop='fuelType']/following-sibling::li[2]")
+	List<WebElement> modelYears;
 
 	public void hoverUsedCars() {
 		explicitWait(usedcar);
@@ -59,6 +82,54 @@ public class UsedCarPage extends BasePage {
 		System.out.println("\nAll popular car models are displayed below :");
 		for (int i = 0; i < carModel.size(); i++) {
 			System.out.println((i + 1) + ". " + carModel.get(i));
+		}
+	}
+
+	public void clickCheckBox(WebElement i) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", i);
+	}
+
+	public List<List<String>> getPopularCarModelDetails() throws InterruptedException {
+		int k = 0;
+		clickCheckBox(allCheckbox.get(k++));
+
+		Thread.sleep(5000);
+		scrollToElement(lastscroll);
+
+		List<String> carDetail = new ArrayList<>();
+		for (int i = 0; i < carNames.size(); i++) {
+			carDetail.clear();
+			String carName = carNames.get(i).getText();
+			carDetail.add(carName);
+
+			String carPrice = carPrices.get(i).getText();
+			carDetail.add(carPrice);
+
+			String fuelPrice = fuelTypes.get(i).getText();
+			carDetail.add(fuelPrice);
+
+			String km = kilometers.get(i).getText();
+			carDetail.add(km);
+
+			String modelYear = modelYears.get(i).getText();
+			carDetail.add(modelYear);
+
+			carDetails.add(new ArrayList<>(carDetail));
+		}
+		clickCheckBox(allCheckbox.get(k++));
+		Thread.sleep(5000);
+		return carDetails;
+
+	}
+
+	public void printPopularCarModelDetails() throws InterruptedException {
+		for (int i = 0; i < allCheckbox.size(); i++) {
+
+			List<List<String>> carDetails = getPopularCarModelDetails();
+			for (int j = 0; j < carDetails.size(); j++) {
+				System.out.println("\nCarDetails" + (j + 1) + ". " + carDetails.get(j));
+			}
 		}
 	}
 }

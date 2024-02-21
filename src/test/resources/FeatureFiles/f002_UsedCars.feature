@@ -6,4 +6,5 @@ Feature: Used Cars in Chennai
     When user hover on Used Cars
     Then user clicks on Chennai
     When user scroll to Popular Models
-    Then user extracts all popular models
+    Then user extracts all popular models name
+    And user extracts all popular model details

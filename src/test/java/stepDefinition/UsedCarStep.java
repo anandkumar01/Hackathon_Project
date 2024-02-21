@@ -35,11 +35,18 @@ public class UsedCarStep {
 		car.scrollToPopularModel();
 	}
 
-	@Then("user extracts all popular models")
-	public void user_extracts_all_popular_models() {
+	@Then("user extracts all popular models name")
+	public void user_extracts_all_popular_models_name() {
 		// Write code here that turns the phrase above into concrete actions
 		car.printPopularCarModels();
 		List<String> carModels = car.getPopularCarModels();
 		WriteExcelData.writePopularCarModel(carModels, filePath);
+	}
+
+	@Then("user extracts all popular model details")
+	public void user_extracts_all_popular_model_details() throws InterruptedException {
+		// Write code here that turns the phrase above into concrete actions
+		car.printPopularCarModelDetails();
+
 	}
 }
