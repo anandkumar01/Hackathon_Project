@@ -223,4 +223,58 @@ public class WriteExcelData {
 			e.printStackTrace();
 		}
 	}
+
+	// This method will write all popular car model details
+	public static void writeAllPopularCarModelDetails(List<List<List<String>>> allPopularCarModelDetails,
+			List<String> popularCarModel, String filePath) {
+
+		try {
+			for (int sheetIndex = 0; sheetIndex < allPopularCarModelDetails.size(); sheetIndex++) {
+				List<List<String>> carDetails = allPopularCarModelDetails.get(sheetIndex);
+
+				XSSFSheet carModelSheet = workbook.createSheet(popularCarModel.get(sheetIndex));
+
+				// Write header row
+				XSSFRow headerRow = carModelSheet.createRow(0);
+				List<String> headerNames = List.of("Car Name", "Car Price", "Fuel Type", "Kilometers", "Model Year");
+
+				for (int i = 0; i < headerNames.size(); i++) {
+					XSSFCell cell = headerRow.createCell(i);
+					cell.setCellValue(headerNames.get(i));
+
+					// Apply styles to each cell using setHeaderStyle method
+					setHeaderStyle(headerRow, i, headerNames.get(i));
+				}
+
+				for (int i = 0; i < headerNames.size(); i++) {
+					XSSFCell cell = headerRow.createCell(i);
+					cell.setCellValue(headerNames.get(i));
+				}
+
+				// Write data rows
+				for (int i = 0; i < carDetails.size(); i++) {
+					XSSFRow row = carModelSheet.createRow(i + 1);
+
+					List<String> rowData = carDetails.get(i);
+					for (int j = 0; j < rowData.size(); j++) {
+						XSSFCell cell = row.createCell(j);
+						cell.setCellValue(rowData.get(j));
+					}
+				}
+
+				// Auto-fit column width implementation
+				for (int i = 0; i < headerRow.getLastCellNum(); i++) {
+					carModelSheet.autoSizeColumn(i);
+				}
+			}
+
+			// writing data in the excel sheet
+			try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
+				workbook.write(fileOut);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

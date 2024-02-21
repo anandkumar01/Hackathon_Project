@@ -33,6 +33,9 @@ public class UsedCarPage extends BasePage {
 	@FindBy(xpath = "//li[starts-with(@id, 'mmvLi')]//label")
 	List<WebElement> popularcarmodel;
 
+	@FindBy(xpath = "(//div[@class=\"gsc_thin_scroll\"]//input)[1]")
+	WebElement checkbox;
+
 	@FindBy(xpath = "//div[@class=\"gsc_thin_scroll\"]//input")
 	List<WebElement> allCheckbox;
 
@@ -85,19 +88,31 @@ public class UsedCarPage extends BasePage {
 		}
 	}
 
-	public void clickCheckBox(WebElement i) {
+	public void clickCheckBox(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", i);
+		js.executeScript("arguments[0].click();", element);
 	}
 
-	public List<List<String>> getPopularCarModelDetails() throws InterruptedException {
-		int k = 0;
-		clickCheckBox(allCheckbox.get(k++));
+	public List<List<List<String>>> getAllPopularCarModelDetails() throws InterruptedException {
+		List<List<List<String>>> allCarDetails = new ArrayList<>();
+
+		for (int i = 0; i < allCheckbox.size(); i++) {
+			List<List<String>> carDetails = getPopularCarModelDetails(i);
+			allCarDetails.add(carDetails);
+		}
+		return allCarDetails;
+	}
+
+	public List<List<String>> getPopularCarModelDetails(int checkboxIndex) throws InterruptedException {
+		WebElement checkbox = allCheckbox.get(checkboxIndex);
+		clickCheckBox(checkbox);
 
 		Thread.sleep(5000);
 		scrollToElement(lastscroll);
 
 		List<String> carDetail = new ArrayList<>();
+		List<List<String>> carDetails = new ArrayList<>();
+
 		for (int i = 0; i < carNames.size(); i++) {
 			carDetail.clear();
 			String carName = carNames.get(i).getText();
@@ -117,19 +132,25 @@ public class UsedCarPage extends BasePage {
 
 			carDetails.add(new ArrayList<>(carDetail));
 		}
-		clickCheckBox(allCheckbox.get(k++));
-		Thread.sleep(5000);
-		return carDetails;
 
+		// Uncheck the checkbox after processing
+		clickCheckBox(checkbox);
+		Thread.sleep(5000);
+
+		return carDetails;
 	}
 
-	public void printPopularCarModelDetails() throws InterruptedException {
-		for (int i = 0; i < allCheckbox.size(); i++) {
+	public void printAllPopularCarModelDetails() throws InterruptedException {
+		List<List<List<String>>> allCarDetails = getAllPopularCarModelDetails();
 
-			List<List<String>> carDetails = getPopularCarModelDetails();
+		for (int i = 0; i < allCarDetails.size(); i++) {
+			List<List<String>> carDetails = allCarDetails.get(i);
+
 			for (int j = 0; j < carDetails.size(); j++) {
-				System.out.println("\nCarDetails" + (j + 1) + ". " + carDetails.get(j));
+				System.out.println(
+						"\nCarDetails for Checkbox " + (i + 1) + ", Set " + (j + 1) + ": " + carDetails.get(j));
 			}
 		}
 	}
+
 }
