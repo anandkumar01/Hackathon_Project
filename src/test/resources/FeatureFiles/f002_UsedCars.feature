@@ -1,5 +1,6 @@
 Feature: Used Cars in Chennai
 
+  @sanity @regression
   Scenario: Extract all popular model of used cars in Chennai
     Given user navigates to zigwheels website
     When user hover on Used Cars

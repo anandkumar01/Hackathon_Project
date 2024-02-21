@@ -1,5 +1,6 @@
 Feature: Invalid Google Login
 
+  @sanity @regression
   Scenario: Google login with invalid account
     Given user navigates to zigwheels website
     When user clicks to signup button

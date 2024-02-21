@@ -117,7 +117,7 @@ public class HealthInsurancePage extends BasePage {
 		inputname.sendKeys(property.getProperty("name"));
 		inputphone.sendKeys(property.getProperty("phone"));
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		viewplan.click();
 
 		explicitWait(checkyou);
