@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -37,13 +38,13 @@ public class BikeDetailStep {
 	}
 
 	@When("user selects manufacturer name")
-	public void user_selects_manufacturer_name() {
+	public void user_selects_manufacturer_name() throws IOException {
 		// Write code here that turns the phrase above into concrete actions
 		bike.selectManufacturer();
 	}
 
 	@Then("user display all upcoming bike details")
-	public void user_display_all_upcoming_boke_details() {
+	public void user_display_all_upcoming_boke_details() throws IOException {
 		// Write code here that turns the phrase above into concrete actions
 		bike.clickToViewMore();
 		bike.printUpcomingBikeDetails();

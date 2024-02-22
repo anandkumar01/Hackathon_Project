@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,7 +19,7 @@ public class BaseClass {
 	static WebDriver driver;
 	static Properties property;
 
-	public static WebDriver initilizeBrowser() throws IOException {
+	public static WebDriver initializeBrowser() throws IOException {
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -47,7 +48,9 @@ public class BaseClass {
 		} else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
 			switch (getProperties().getProperty("browser").toLowerCase()) {
 			case "chrome":
-				driver = new ChromeDriver();
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--start-maximized");
+				driver = new ChromeDriver(options);
 				break;
 			case "edge":
 				driver = new EdgeDriver();
@@ -69,10 +72,10 @@ public class BaseClass {
 
 	public static Properties getProperties() throws IOException {
 		String propertyFile = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
-		FileReader file = new FileReader(propertyFile);
-
-		property = new Properties();
-		property.load(file);
+		try (FileReader file = new FileReader(propertyFile)) {
+			property = new Properties();
+			property.load(file);
+		}
 		return property;
 	}
 }

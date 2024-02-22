@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -16,6 +17,8 @@ public class BikeDetailsPage extends BasePage {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
+
+	String filepath = System.getProperty("user.dir") + "\\src\\test\\resources\\Screenshots";
 
 	// Initialising LinkedHashMap to store bike details in ordered way
 	LinkedHashMap<String, List<String>> bikeDetailsMap = new LinkedHashMap<>();
@@ -57,12 +60,13 @@ public class BikeDetailsPage extends BasePage {
 		upcomingbike.click();
 	}
 
-	public void selectManufacturer() {
+	public void selectManufacturer() throws IOException {
 		Select select = new Select(selectmanufacturer);
 		select.selectByVisibleText("Honda");
+		captureFullPageScreenshot(driver, filepath);
 	}
 
-	public void clickToViewMore() {
+	public void clickToViewMore() throws IOException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		scrollToElement(scroll);
 		explicitWait(viewmore);
