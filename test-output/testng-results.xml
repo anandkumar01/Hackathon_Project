@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-22T22:01:22 IST" name="Suite" finished-at="2024-02-22T22:06:30 IST" duration-ms="308000">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-02-22T22:01:22 IST" name="Test" finished-at="2024-02-22T22:06:30 IST" duration-ms="308000">
+      <class name="testRunner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:01:22 IST" name="setUpClass" finished-at="2024-02-22T22:01:24 IST" duration-ms="1337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@478bbf33]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:01:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-22T22:01:45 IST" duration-ms="20996" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Extract all upcoming bike details under four lacks"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Upcoming Bike Details"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:01:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-22T22:04:47 IST" duration-ms="182610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Extract all popular model of used cars in Chennai"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Used Cars in Chennai"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:04:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-22T22:04:57 IST" duration-ms="9803" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Google login with invalid account"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Invalid Google Login"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:04:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-22T22:05:10 IST" duration-ms="13041" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Extract all upcoming car details"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Upcoming Car Details"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:05:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-22T22:06:23 IST" duration-ms="73250" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Extracting all health insurance plan"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Health Insurance"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunner.TestRunner@5bf0d49]" started-at="2024-02-22T22:06:23 IST" name="tearDownClass" finished-at="2024-02-22T22:06:30 IST" duration-ms="6891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- testRunner.TestRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

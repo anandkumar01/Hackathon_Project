@@ -9,7 +9,6 @@ import java.util.Properties;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -48,9 +47,7 @@ public class BaseClass {
 		} else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
 			switch (getProperties().getProperty("browser").toLowerCase()) {
 			case "chrome":
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--start-maximized");
-				driver = new ChromeDriver(options);
+				driver = new ChromeDriver();
 				break;
 			case "edge":
 				driver = new EdgeDriver();
