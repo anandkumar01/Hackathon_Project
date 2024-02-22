@@ -100,6 +100,7 @@ public class UsedCarPage extends BasePage {
 			List<List<String>> carDetails = getPopularCarModelDetails(i);
 			allCarDetails.add(carDetails);
 		}
+		printAllPopularCarModelDetails(allCarDetails);
 		return allCarDetails;
 	}
 
@@ -140,8 +141,7 @@ public class UsedCarPage extends BasePage {
 		return carDetails;
 	}
 
-	public void printAllPopularCarModelDetails() throws InterruptedException {
-		List<List<List<String>>> allCarDetails = getAllPopularCarModelDetails();
+	public void printAllPopularCarModelDetails(List<List<List<String>>> allCarDetails) throws InterruptedException {
 
 		for (int i = 0; i < allCarDetails.size(); i++) {
 			List<List<String>> carDetails = allCarDetails.get(i);

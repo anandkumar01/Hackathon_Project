@@ -15,6 +15,7 @@ public class UsedCarStep {
 	WebDriver driver;
 	UsedCarPage car;
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
+	List<String> carModels;
 
 	@When("user hover on Used Cars")
 	public void user_hover_on_used_cars() {
@@ -39,17 +40,14 @@ public class UsedCarStep {
 	public void user_extracts_all_popular_models_name() {
 		// Write code here that turns the phrase above into concrete actions
 		car.printPopularCarModels();
-		List<String> carModels = car.getPopularCarModels();
+		carModels = car.getPopularCarModels();
 		WriteExcelData.writePopularCarModel(carModels, filePath);
 	}
 
 	@Then("user extracts all popular model details")
 	public void user_extracts_all_popular_model_details() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
-		car.printAllPopularCarModelDetails();
-		List<String> popularCarModel = car.getPopularCarModels();
 		List<List<List<String>>> allPopularCarModelDetails = car.getAllPopularCarModelDetails();
-		WriteExcelData.writeAllPopularCarModelDetails(allPopularCarModelDetails, popularCarModel, filePath);
-
+		WriteExcelData.writeAllPopularCarModelDetails(allPopularCarModelDetails, carModels, filePath);
 	}
 }
