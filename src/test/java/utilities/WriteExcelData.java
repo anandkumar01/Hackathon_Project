@@ -246,11 +246,6 @@ public class WriteExcelData {
 					setHeaderStyle(headerRow, i, headerNames.get(i));
 				}
 
-				for (int i = 0; i < headerNames.size(); i++) {
-					XSSFCell cell = headerRow.createCell(i);
-					cell.setCellValue(headerNames.get(i));
-				}
-
 				// Write data rows
 				for (int i = 0; i < carDetails.size(); i++) {
 					XSSFRow row = carModelSheet.createRow(i + 1);
@@ -277,4 +272,5 @@ public class WriteExcelData {
 			e.printStackTrace();
 		}
 	}
+
 }
