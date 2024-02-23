@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,9 +61,9 @@ public class BikeDetailsPage extends BasePage {
 		upcomingbike.click();
 	}
 
-	public void selectManufacturer() throws IOException {
+	public void selectManufacturer(String manufeacurername) throws IOException {
 		Select select = new Select(selectmanufacturer);
-		select.selectByVisibleText("Honda");
+		select.selectByVisibleText(manufeacurername);
 		captureFullPageScreenshot(driver, filepath);
 	}
 
@@ -111,4 +112,45 @@ public class BikeDetailsPage extends BasePage {
 			i++;
 		}
 	}
+
+//	Functionality for Smoke Testing
+
+	@FindBy(xpath = "//h1[contains(text(),'Upcoming Bikes in India')]")
+	WebElement bikeheading;
+
+	public void zigwheelspage() {
+		String title = driver.getTitle();
+		Assert.assertEquals(title, "New Cars & Bikes, Prices, News, Reviews, Buy & Sell Used Cars - ZigWheels.com");
+		System.out.println("Zigwheels Page is Opened without any errors");
+	}
+
+	public void checkNewBikes() {
+		boolean newbike = newbikes.isDisplayed();
+		if (newbike) {
+			System.out.println("New Bikes is displayed at header successfully..");
+		} else {
+			System.out.println("New Bikes at header is not visible..");
+		}
+	}
+
+	public void checkUpcomingBikes() {
+		explicitWait(upcomingbike);
+		boolean newbike = upcomingbike.isDisplayed();
+		if (newbike) {
+			System.out.println("Upcoming Bikes is displayed in the list successfully..");
+		} else {
+			System.out.println("Upcoming Bikes is not visible..");
+		}
+	}
+
+	public void validateHondaBikes() {
+		explicitWait(bikeheading);
+		boolean heading = bikeheading.isDisplayed();
+		if (heading) {
+			System.out.println("All upcoming Honda Bikes are displayed successfully..");
+		} else {
+			System.out.println("All upcoming Honda Bikes are not visible..");
+		}
+	}
+
 }

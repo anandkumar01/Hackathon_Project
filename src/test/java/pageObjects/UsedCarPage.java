@@ -58,6 +58,7 @@ public class UsedCarPage extends BasePage {
 	List<WebElement> modelYears;
 
 	public void hoverUsedCars() {
+		driver.navigate().back();
 		explicitWait(usedcar);
 		hoverOnElement(usedcar);
 	}
@@ -150,6 +151,40 @@ public class UsedCarPage extends BasePage {
 				System.out.println(
 						"\nCarDetails for Checkbox " + (i + 1) + ", Set " + (j + 1) + ": " + carDetails.get(j));
 			}
+		}
+	}
+
+//	Functionality for Smoke Testing
+
+	@FindBy(xpath = "//h1[contains(text(),'Used Cars in Chennai')]")
+	WebElement usedcarheading;
+
+	public void checkUsedCars() {
+		boolean car = usedcar.isDisplayed();
+		if (car) {
+			System.out.println("Used Cars is displayed at header successfully..");
+		} else {
+			System.out.println("Used Cars at header is not visible..");
+		}
+	}
+
+	public void checkChennaiCity() {
+		explicitWait(chennai);
+		boolean city = chennai.isDisplayed();
+		if (city) {
+			System.out.println("Chennai is displayed in the list successfully..");
+		} else {
+			System.out.println("Chennai Cars is not visible..");
+		}
+	}
+
+	public void validateUsedCarsForChennai() {
+		explicitWait(usedcarheading);
+		boolean heading = usedcarheading.isDisplayed();
+		if (heading) {
+			System.out.println("Used Cars in Chennai is displayed successfully..");
+		} else {
+			System.out.println("Used Cars in Chennai is not visible..");
 		}
 	}
 

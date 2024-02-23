@@ -81,6 +81,7 @@ public class HealthInsurancePage extends BasePage {
 	List<WebElement> allscroll;
 
 	public void hoverMore() {
+		driver.navigate().back();
 		explicitWait(moresection);
 		hoverOnElement(moresection);
 	}
@@ -150,6 +151,18 @@ public class HealthInsurancePage extends BasePage {
 		System.out.println("\nAll Health Insurance brand name are displayed below :");
 		for (int i = 0; i < insurancePlan.size(); i++) {
 			System.out.println((i + 1) + ". " + insurancePlan.get(i));
+		}
+	}
+
+//	Functionality for Smoke Testing
+
+	public void checkHealthInsurance() {
+		explicitWait(healthinsurance);
+		boolean health = healthinsurance.isDisplayed();
+		if (health) {
+			System.out.println("Health Insurance is displayed in the list successfully..");
+		} else {
+			System.out.println("Health Insurance is not visible..");
 		}
 	}
 

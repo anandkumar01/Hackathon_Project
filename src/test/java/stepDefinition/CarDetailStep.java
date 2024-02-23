@@ -30,10 +30,10 @@ public class CarDetailStep {
 		car.clickUpcomingCars();
 	}
 
-	@When("user select manufacturer name")
-	public void user_select_manufacturer_name() {
+	@When("user select {string} manufacturer name")
+	public void user_select_manufacturer_name(String manufacturer) {
 		// Write code here that turns the phrase above into concrete actions
-		car.selectManufacturer();
+		car.selectManufacturer(manufacturer);
 	}
 
 	@Then("user display all upcoming car details")

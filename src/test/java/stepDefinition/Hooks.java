@@ -8,17 +8,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
-import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
 public class Hooks {
-	WebDriver driver;
-	Properties property;
+	static WebDriver driver;
+	static Properties property;
 
-	@Before
-	public void setup() throws IOException {
+	@BeforeAll
+	public static void setup() throws IOException {
 		property = BaseClass.getProperties();
 		driver = BaseClass.initializeBrowser();
 		driver.get(property.getProperty("baseUrl"));
@@ -34,8 +34,12 @@ public class Hooks {
 		}
 	}
 
-	@After
-	public void tearDown() {
+	public static WebDriver getWebDriver() {
+		return driver;
+	}
+
+	@AfterAll
+	public static void tearDown() {
 		driver.quit();
 	}
 }

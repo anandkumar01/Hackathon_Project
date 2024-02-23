@@ -49,6 +49,7 @@ public class CarDetailsPage extends BasePage {
 	List<WebElement> carlaunchdate;
 
 	public void hoverNewCars() {
+		driver.navigate().back();
 		explicitWait(newcars);
 		hoverOnElement(newcars);
 	}
@@ -57,9 +58,9 @@ public class CarDetailsPage extends BasePage {
 		upcomingcar.click();
 	}
 
-	public void selectManufacturer() {
+	public void selectManufacturer(String manufacturer) {
 		Select select = new Select(selectmanufacturer);
-		select.selectByVisibleText("Tata");
+		select.selectByVisibleText(manufacturer);
 	}
 
 	public void clickToViewMore() {
@@ -100,4 +101,39 @@ public class CarDetailsPage extends BasePage {
 			i++;
 		}
 	}
+
+//	Functionality for Smoke Testing
+
+	@FindBy(xpath = "//h1[contains(text(),'Upcoming Cars in India')]")
+	WebElement carheading;
+
+	public void checkNewCars() {
+		boolean newcar = newcars.isDisplayed();
+		if (newcar) {
+			System.out.println("New Cars is displayed at header successfully..");
+		} else {
+			System.out.println("New Cars at header is not visible..");
+		}
+	}
+
+	public void checkUpcomingCars() {
+		explicitWait(upcomingcar);
+		boolean newcar = upcomingcar.isDisplayed();
+		if (newcar) {
+			System.out.println("Upcoming Cars is displayed in the list successfully..");
+		} else {
+			System.out.println("Upcoming Cars is not visible..");
+		}
+	}
+
+	public void validateHondaCars() {
+		explicitWait(carheading);
+		boolean heading = carheading.isDisplayed();
+		if (heading) {
+			System.out.println("All upcoming Tata Cars are displayed successfully..");
+		} else {
+			System.out.println("All upcoming Tata Cars are not visible..");
+		}
+	}
+
 }

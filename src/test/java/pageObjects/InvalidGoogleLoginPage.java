@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,9 @@ public class InvalidGoogleLoginPage extends BasePage {
 	String winHandleBefore;
 
 	// Web elements for different functionality
-	@FindBy(xpath = "//div[@id='des_lIcon']")
+	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
+	WebElement zigwheels;
+	@FindBy(xpath = "//div[@id='forum_login_title_lg']")
 	WebElement loginbutton;
 
 	@FindBy(xpath = "//span[contains(text(), 'Google')]")
@@ -33,6 +36,9 @@ public class InvalidGoogleLoginPage extends BasePage {
 	WebElement errormessage;
 
 	public void clickLoginButton() {
+		driver.navigate().back();
+		zigwheels.click();
+		explicitWait(loginbutton);
 		loginbutton.click();
 	}
 
@@ -64,5 +70,30 @@ public class InvalidGoogleLoginPage extends BasePage {
 
 		// Switch back to original browser (first window)
 		driver.switchTo().window(winHandleBefore);
+		driver.findElement(By.id("report_submit_close_login")).click();
 	}
+
+//	Functionality for Smoke Testing
+
+	public void checkLoginButton() {
+		driver.navigate().back();
+		boolean login = loginbutton.isDisplayed();
+		if (login) {
+			System.out.println("Login or Signup Button are displayed succesfully...");
+		} else {
+			System.out.println("Login or Signup Button not visible..");
+		}
+	}
+
+	public void checkGoogleOption() {
+		explicitWait(google);
+		boolean googleoption = google.isDisplayed();
+		if (googleoption) {
+			System.out.println("Google option is displayed succesfully...");
+		} else {
+			System.out.println("Google option is not visible..");
+		}
+		driver.findElement(By.id("report_submit_close_login")).click();
+	}
+
 }

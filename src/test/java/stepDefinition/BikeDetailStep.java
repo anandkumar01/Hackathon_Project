@@ -37,10 +37,10 @@ public class BikeDetailStep {
 		bike.clickUpcomingBikes();
 	}
 
-	@When("user selects manufacturer name")
-	public void user_selects_manufacturer_name() throws IOException {
+	@When("user selects {string} manufacturer name")
+	public void user_selects_manufacturer_name(String manufeacurername) throws IOException {
 		// Write code here that turns the phrase above into concrete actions
-		bike.selectManufacturer();
+		bike.selectManufacturer(manufeacurername);
 	}
 
 	@Then("user display all upcoming bike details")
