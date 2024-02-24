@@ -21,6 +21,9 @@ public class CarDetailsPage extends BasePage {
 	LinkedHashMap<String, List<String>> carDetailsMap = new LinkedHashMap<>();
 
 	// Web elements for different functionality
+	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
+	WebElement zigwheels;
+
 	@FindBy(xpath = "//a[contains(text(), \"New Cars\")]")
 	WebElement newcars;
 
@@ -49,7 +52,7 @@ public class CarDetailsPage extends BasePage {
 	List<WebElement> carlaunchdate;
 
 	public void hoverNewCars() {
-		driver.navigate().back();
+		zigwheels.click();
 		explicitWait(newcars);
 		hoverOnElement(newcars);
 	}

@@ -24,6 +24,9 @@ public class HealthInsurancePage extends BasePage {
 	List<String> insurancePlan = new ArrayList<>();
 
 	// Web elements for different functionality
+	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
+	WebElement zigwheels;
+
 	@FindBy(xpath = "//div[@id=\"headerNewNavWrap\"]//li[9]/a")
 	WebElement moresection;
 
@@ -81,7 +84,7 @@ public class HealthInsurancePage extends BasePage {
 	List<WebElement> allscroll;
 
 	public void hoverMore() {
-		driver.navigate().back();
+		zigwheels.click();
 		explicitWait(moresection);
 		hoverOnElement(moresection);
 	}
@@ -164,6 +167,8 @@ public class HealthInsurancePage extends BasePage {
 		} else {
 			System.out.println("Health Insurance is not visible..");
 		}
+		zigwheels.click();
+
 	}
 
 }

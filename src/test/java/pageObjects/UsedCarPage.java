@@ -20,6 +20,9 @@ public class UsedCarPage extends BasePage {
 	List<List<String>> carDetails = new ArrayList<>();
 
 	// Web elements for different functionality
+	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
+	WebElement zigwheels;
+
 	@FindBy(xpath = "//a[contains(text(), \'Used Cars\')]")
 	WebElement usedcar;
 
@@ -58,7 +61,7 @@ public class UsedCarPage extends BasePage {
 	List<WebElement> modelYears;
 
 	public void hoverUsedCars() {
-		driver.navigate().back();
+		zigwheels.click();
 		explicitWait(usedcar);
 		hoverOnElement(usedcar);
 	}

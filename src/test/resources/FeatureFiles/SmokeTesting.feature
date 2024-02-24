@@ -6,10 +6,17 @@ Feature: Smoke Test Suite
     Then user should see a well-rendered homepage
 
   @smoke
+  Scenario: Verify Login Functionality
+    Given user is currently on the zigwheels website
+    Then checks whether login or signup is present in the zigwheels tab
+    When user click the login or signup button in homepage
+    Then user should be directed to the login or register tab
+
+  @smoke
   Scenario: Verify Search Functionality for New Bikes
     Given user is currently on the zigwheels website
     Then check whether New Bikes is present in the header section
-    When user hovers the mouse over the New Bikes
+    When user hovers the mouse over the "New Bikes" as New Bikes
     Then check whether upcoming bikes is present in dropdown
     Then user should see relevant search results for Honda bikes
 
@@ -34,11 +41,3 @@ Feature: Smoke Test Suite
     Given user is currently on the zigwheels website
     When user hovers the mouse over the More section
     Then check whether Health Insurance is present in the list
-
-  @smoke
-  Scenario: Verify Login Functionality
-    Given user is currently on the zigwheels website
-    Then checks whether login or signup is present in the zigwheels tab
-    When user click the login or signup button in homepage
-    Then user should be directed to the login or register tab
-

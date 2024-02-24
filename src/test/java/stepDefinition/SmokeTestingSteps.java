@@ -40,10 +40,10 @@ public class SmokeTestingSteps {
 		bike.checkNewBikes();
 	}
 
-	@When("user hovers the mouse over the New Bikes")
-	public void user_hovers_the_mouse_over_the_new_bikes() {
+	@When("user hovers the mouse over the {string} as New Bikes")
+	public void user_hovers_the_mouse_over_the_as_new_bikes(String newBikes) {
 		// Write code here that turns the phrase above into concrete actions
-		bike.hoverNewBikes();
+		bike.hoverNewBikes(newBikes);
 	}
 
 	@Then("check whether upcoming bikes is present in dropdown")

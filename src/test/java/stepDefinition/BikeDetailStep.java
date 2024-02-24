@@ -25,10 +25,10 @@ public class BikeDetailStep {
 		bike = new BikeDetailsPage(BaseClass.getDriver());
 	}
 
-	@When("user hover on New Bikes")
-	public void user_hover_on_new_bikes() {
+	@When("user hover on {string} as New Bikes")
+	public void user_hover_on_as_new_bikes(String newBikes) {
 		// Write code here that turns the phrase above into concrete actions
-		bike.hoverNewBikes();
+		bike.hoverNewBikes(newBikes);
 	}
 
 	@Then("user clicks on Upcoming Bikes")

@@ -20,6 +20,7 @@ public class InvalidGoogleLoginPage extends BasePage {
 	// Web elements for different functionality
 	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
 	WebElement zigwheels;
+
 	@FindBy(xpath = "//div[@id='forum_login_title_lg']")
 	WebElement loginbutton;
 
@@ -36,8 +37,6 @@ public class InvalidGoogleLoginPage extends BasePage {
 	WebElement errormessage;
 
 	public void clickLoginButton() {
-		driver.navigate().back();
-		zigwheels.click();
 		explicitWait(loginbutton);
 		loginbutton.click();
 	}
@@ -76,7 +75,7 @@ public class InvalidGoogleLoginPage extends BasePage {
 //	Functionality for Smoke Testing
 
 	public void checkLoginButton() {
-		driver.navigate().back();
+//		zigwheels.click();
 		boolean login = loginbutton.isDisplayed();
 		if (login) {
 			System.out.println("Login or Signup Button are displayed succesfully...");
