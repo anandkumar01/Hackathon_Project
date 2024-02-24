@@ -33,6 +33,30 @@ public class SmokeTestingSteps {
 		bike.zigwheelspage();
 	}
 
+	@Given("user is currently on the zigwheels website")
+	public void user_is_currently_on_the_zigwheels_website() {
+		// Write code here that turns the phrase above into concrete actions
+		google = new InvalidGoogleLoginPage(BaseClass.getDriver());
+	}
+
+	@Then("checks whether login or signup is present in the zigwheels tab")
+	public void checks_whether_login_signup_is_present_in_the_zigwheels_tab() {
+		// Write code here that turns the phrase above into concrete actions
+		google.checkLoginButton();
+	}
+
+	@When("user click the login or signup button in homepage")
+	public void user_click_the_login_signup_button_in_homepage() {
+		// Write code here that turns the phrase above into concrete actions
+		google.clickLoginButton();
+	}
+
+	@Then("user should be directed to the login or register tab")
+	public void user_should_be_directed_to_the_login_register_tab() {
+		// Write code here that turns the phrase above into concrete actions
+		google.checkGoogleOption();
+	}
+
 	@Then("check whether New Bikes is present in the header section")
 	public void check_whether_new_bikes_is_present_in_the_header_section() {
 		// Write code here that turns the phrase above into concrete actions
@@ -66,10 +90,10 @@ public class SmokeTestingSteps {
 		car.checkNewCars();
 	}
 
-	@When("user hovers the mouse over the New Cars")
-	public void user_hovers_the_mouse_over_the_new_cars() {
+	@When("user hovers the mouse over the {string} as New Cars")
+	public void user_hovers_the_mouse_over_the_as_new_cars(String newCars) {
 		// Write code here that turns the phrase above into concrete actions
-		car.hoverNewCars();
+		car.hoverNewCars(newCars);
 	}
 
 	@Then("check whether upcoming cars is present in dropdown")
@@ -123,27 +147,4 @@ public class SmokeTestingSteps {
 		health.checkHealthInsurance();
 	}
 
-	@Given("user is currently on the zigwheels website")
-	public void user_is_currently_on_the_zigwheels_website() {
-		// Write code here that turns the phrase above into concrete actions
-		google = new InvalidGoogleLoginPage(BaseClass.getDriver());
-	}
-
-	@Then("checks whether login or signup is present in the zigwheels tab")
-	public void checks_whether_login_signup_is_present_in_the_zigwheels_tab() {
-		// Write code here that turns the phrase above into concrete actions
-		google.checkLoginButton();
-	}
-
-	@When("user click the login or signup button in homepage")
-	public void user_click_the_login_signup_button_in_homepage() {
-		// Write code here that turns the phrase above into concrete actions
-		google.clickLoginButton();
-	}
-
-	@Then("user should be directed to the login or register tab")
-	public void user_should_be_directed_to_the_login_register_tab() {
-		// Write code here that turns the phrase above into concrete actions
-		google.checkGoogleOption();
-	}
 }

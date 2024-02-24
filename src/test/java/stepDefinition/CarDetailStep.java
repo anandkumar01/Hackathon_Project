@@ -17,11 +17,11 @@ public class CarDetailStep {
 	CarDetailsPage car;
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
-	@When("user hover on New Cars")
-	public void user_hover_on_new_cars() {
+	@When("user hover on {string} as new cars")
+	public void user_hover_on_as_new_cars(String newCars) {
 		// Write code here that turns the phrase above into concrete actions
 		car = new CarDetailsPage(BaseClass.getDriver());
-		car.hoverNewCars();
+		car.hoverNewCars(newCars);
 	}
 
 	@Then("user clicks on Upcoming Cars")

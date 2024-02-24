@@ -27,6 +27,9 @@ public class CarDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[contains(text(), \"New Cars\")]")
 	WebElement newcars;
 
+	@FindBy(xpath = "//ul[starts-with(@class, 'h-d-nav')]/li/a")
+	List<WebElement> navheaderlist;
+
 	@FindBy(xpath = "//span[contains(text(), \"Upcoming Cars\")]")
 	WebElement upcomingcar;
 
@@ -51,10 +54,15 @@ public class CarDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> carlaunchdate;
 
-	public void hoverNewCars() {
+	public void hoverNewCars(String newCars) {
 		zigwheels.click();
 		explicitWait(newcars);
-		hoverOnElement(newcars);
+		for (WebElement element : navheaderlist) {
+			if (newCars.equals(element.getText())) {
+				hoverOnElement(element);
+				break;
+			}
+		}
 	}
 
 	public void clickUpcomingCars() {

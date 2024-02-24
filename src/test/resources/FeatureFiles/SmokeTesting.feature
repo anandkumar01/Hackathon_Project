@@ -24,7 +24,7 @@ Feature: Smoke Test Suite
   Scenario: Verify Search Functionality for New Cars
     Given user is currently on the zigwheels website
     Then check whether New Cars is present in the header section
-    When user hovers the mouse over the New Cars
+    When user hovers the mouse over the "New Cars" as New Cars
     Then check whether upcoming cars is present in dropdown
     Then user should see relevant search results for Tata Cars
 
