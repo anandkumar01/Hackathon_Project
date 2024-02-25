@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.OutputType;
@@ -23,6 +24,7 @@ public class Hooks {
 		driver = BaseClass.initializeBrowser();
 		driver.get(property.getProperty("baseUrl"));
 		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 	}
 
 	@AfterStep

@@ -3,16 +3,12 @@ package pageObjects;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import factory.BaseClass;
-
 public class HealthInsurancePage extends BasePage {
-	Properties property;
 
 	public HealthInsurancePage(WebDriver driver) {
 		super(driver);
@@ -80,8 +76,8 @@ public class HealthInsurancePage extends BasePage {
 	@FindBy(xpath = "//div[starts-with(@class, 'quotesListWrapper')]/div/div/div[2]/div/div[2]/div[2]/div//button/span")
 	List<WebElement> insuranceplan;
 
-	@FindBy(xpath = "//div[@class='viewMorePlan']")
-	List<WebElement> allscroll;
+	@FindBy(xpath = "//div[@class='disclaimer']")
+	WebElement disclaimerscroll;
 
 	public void hoverMore() {
 		zigwheels.click();
@@ -95,11 +91,11 @@ public class HealthInsurancePage extends BasePage {
 	}
 
 	public void fillBasicDetails() throws IOException, InterruptedException {
-		property = BaseClass.getProperties();
+		explicitWait(scroll);
 		scrollToElement(scroll);
 		checkmale.click();
-		inputname.sendKeys(property.getProperty("name"));
-		inputphone.sendKeys(property.getProperty("phone"));
+		inputname.sendKeys("Anand");
+		inputphone.sendKeys("9876543210");
 
 		Thread.sleep(2000);
 		viewplan.click();
@@ -109,8 +105,9 @@ public class HealthInsurancePage extends BasePage {
 		continuebtn.click();
 
 		clickage.click();
+		explicitWait(selectage);
 		selectage.click();
-		inputpincode.sendKeys(property.getProperty("pincode"));
+		inputpincode.sendKeys("603103");
 		explicitWait(continueBtn);
 		continueBtn.click();
 
@@ -123,8 +120,9 @@ public class HealthInsurancePage extends BasePage {
 	}
 
 	public List<String> getHealthInsuranceBrandName() throws InterruptedException {
+		scrollToElement(disclaimerscroll);
+		Thread.sleep(15000);
 		brandName.clear();
-		Thread.sleep(25000);
 		for (WebElement ele : brandname) {
 			String brand = ele.getText();
 			brandName.add(brand);

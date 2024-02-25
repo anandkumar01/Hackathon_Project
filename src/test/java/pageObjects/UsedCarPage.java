@@ -17,7 +17,7 @@ public class UsedCarPage extends BasePage {
 
 	// Initialising list to store all popular car model name
 	List<String> popularCarModels = new ArrayList<>();
-	List<List<String>> carDetails = new ArrayList<>();
+	List<List<List<String>>> allCarDetails = new ArrayList<>();
 
 	// Web elements for different functionality
 	@FindBy(xpath = "//img[@data-track-label=\"zw-header-logo\"]")
@@ -98,13 +98,11 @@ public class UsedCarPage extends BasePage {
 	}
 
 	public List<List<List<String>>> getAllPopularCarModelDetails() throws InterruptedException {
-		List<List<List<String>>> allCarDetails = new ArrayList<>();
-
 		for (int i = 0; i < allCheckbox.size(); i++) {
 			List<List<String>> carDetails = getPopularCarModelDetails(i);
 			allCarDetails.add(carDetails);
 		}
-		printAllPopularCarModelDetails(allCarDetails);
+		printAllPopularCarModelDetails();
 		return allCarDetails;
 	}
 
@@ -145,8 +143,7 @@ public class UsedCarPage extends BasePage {
 		return carDetails;
 	}
 
-	public void printAllPopularCarModelDetails(List<List<List<String>>> allCarDetails) throws InterruptedException {
-
+	public void printAllPopularCarModelDetails() throws InterruptedException {
 		for (int i = 0; i < allCarDetails.size(); i++) {
 			List<List<String>> carDetails = allCarDetails.get(i);
 
