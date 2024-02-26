@@ -29,15 +29,15 @@ Feature: Smoke Test Suite
     Then user should see relevant search results for Tata Cars
 
   @smoke
+  Scenario: Verify the Health Insurance
+    Given user is currently on the zigwheels website
+    When user hovers the mouse over the More section
+    Then check whether Health Insurance is present in the list
+
+  @smoke
   Scenario: Navigate to the Used cars page
     Given user is currently on the zigwheels website
     When user hovers on Used Cars
     Then check whether Chennai city is present in the list
     When user click at Chennai option
     Then user should see relevant search results for Used Cars in Chennai
-
-  @smoke
-  Scenario: Verify the Health Insurance
-    Given user is currently on the zigwheels website
-    When user hovers the mouse over the More section
-    Then check whether Health Insurance is present in the list
