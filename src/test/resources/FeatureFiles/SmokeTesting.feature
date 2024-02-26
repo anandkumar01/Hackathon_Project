@@ -16,7 +16,7 @@ Feature: Smoke Test Suite
   Scenario: Verify Search Functionality for New Bikes
     Given user is currently on the zigwheels website
     Then check whether New Bikes is present in the header section
-    When user hovers the mouse over the "New Bikes" as New Bikes
+    When user hovers the mouse over the New Bikes
     Then check whether upcoming bikes is present in dropdown
     Then user should see relevant search results for Honda bikes
 
@@ -24,7 +24,7 @@ Feature: Smoke Test Suite
   Scenario: Verify Search Functionality for New Cars
     Given user is currently on the zigwheels website
     Then check whether New Cars is present in the header section
-    When user hovers the mouse over the "New Cars" as New Cars
+    When user hovers the mouse over the New Cars
     Then check whether upcoming cars is present in dropdown
     Then user should see relevant search results for Tata Cars
 

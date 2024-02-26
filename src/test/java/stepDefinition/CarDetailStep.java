@@ -17,11 +17,11 @@ public class CarDetailStep {
 	CarDetailsPage car;
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 
-	@When("user hover on {string} as new cars")
-	public void user_hover_on_as_new_cars(String newCars) {
+	@When("user hover on New Cars")
+	public void user_hover_on_new_cars() {
 		// Write code here that turns the phrase above into concrete actions
 		car = new CarDetailsPage(BaseClass.getDriver());
-		car.hoverNewCars(newCars);
+		car.hoverNewCars();
 	}
 
 	@Then("user clicks on Upcoming Cars")
@@ -30,10 +30,10 @@ public class CarDetailStep {
 		car.clickUpcomingCars();
 	}
 
-	@When("user select {string} manufacturer name")
-	public void user_select_manufacturer_name(String manufacturer) {
+	@When("user select manufacturer name")
+	public void user_select_manufacturer_name() {
 		// Write code here that turns the phrase above into concrete actions
-		car.selectManufacturer(manufacturer);
+		car.selectManufacturer();
 	}
 
 	@Then("user display all upcoming car details")

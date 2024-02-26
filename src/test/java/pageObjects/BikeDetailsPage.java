@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class BikeDetailsPage extends BasePage {
 
@@ -55,23 +55,18 @@ public class BikeDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> bikelaunchdate;
 
-	public void hoverNewBikes(String newBikes) {
+	public void hoverNewBikes() {
 		explicitWait(newbikes);
-		for (WebElement element : navheaderlist) {
-			if (newBikes.equals(element.getText())) {
-				hoverOnElement(element);
-				break;
-			}
-		}
+		hoverOnElement(newbikes);
 	}
 
 	public void clickUpcomingBikes() {
 		upcomingbike.click();
 	}
 
-	public void selectManufacturer(String manufeacurername) throws IOException {
+	public void selectManufacturer() {
 		Select select = new Select(selectmanufacturer);
-		select.selectByVisibleText(manufeacurername);
+		select.selectByVisibleText("Honda");
 		captureFullPageScreenshot(driver, filepath);
 	}
 

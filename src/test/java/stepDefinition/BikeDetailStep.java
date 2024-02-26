@@ -25,10 +25,10 @@ public class BikeDetailStep {
 		bike = new BikeDetailsPage(BaseClass.getDriver());
 	}
 
-	@When("user hover on {string} as New Bikes")
-	public void user_hover_on_as_new_bikes(String newBikes) {
+	@When("user hover on New Bikes")
+	public void user_hover_on_new_bikes() {
 		// Write code here that turns the phrase above into concrete actions
-		bike.hoverNewBikes(newBikes);
+		bike.hoverNewBikes();
 	}
 
 	@Then("user clicks on Upcoming Bikes")
@@ -37,10 +37,10 @@ public class BikeDetailStep {
 		bike.clickUpcomingBikes();
 	}
 
-	@When("user selects {string} manufacturer name")
-	public void user_selects_manufacturer_name(String manufeacurername) throws IOException {
+	@When("user selects manufacturer name")
+	public void user_selects_manufacturer_name() throws IOException {
 		// Write code here that turns the phrase above into concrete actions
-		bike.selectManufacturer(manufeacurername);
+		bike.selectManufacturer();
 	}
 
 	@Then("user display all upcoming bike details")

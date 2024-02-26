@@ -64,10 +64,10 @@ public class SmokeTestingSteps {
 		bike.checkNewBikes();
 	}
 
-	@When("user hovers the mouse over the {string} as New Bikes")
-	public void user_hovers_the_mouse_over_the_as_new_bikes(String newBikes) {
+	@When("user hovers the mouse over the New Bikes")
+	public void user_hovers_the_mouse_over_the_as_new_bikes() {
 		// Write code here that turns the phrase above into concrete actions
-		bike.hoverNewBikes(newBikes);
+		bike.hoverNewBikes();
 	}
 
 	@Then("check whether upcoming bikes is present in dropdown")
@@ -90,10 +90,10 @@ public class SmokeTestingSteps {
 		car.checkNewCars();
 	}
 
-	@When("user hovers the mouse over the {string} as New Cars")
-	public void user_hovers_the_mouse_over_the_as_new_cars(String newCars) {
+	@When("user hovers the mouse over the New Cars")
+	public void user_hovers_the_mouse_over_the_as_new_cars() {
 		// Write code here that turns the phrase above into concrete actions
-		car.hoverNewCars(newCars);
+		car.hoverNewCars();
 	}
 
 	@Then("check whether upcoming cars is present in dropdown")
