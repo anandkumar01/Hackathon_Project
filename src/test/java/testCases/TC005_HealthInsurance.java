@@ -9,7 +9,7 @@ import factory.CrossBrowsing;
 import pageObjects.HealthInsurancePage;
 import utilities.WriteExcelData;
 
-public class TC004_HealthInsurance extends CrossBrowsing {
+public class TC005_HealthInsurance extends CrossBrowsing {
 	HealthInsurancePage health;
 	String filepath = System.getProperty("user.dir") + "\\src\\test\\resources\\testdata.xlsx";
 

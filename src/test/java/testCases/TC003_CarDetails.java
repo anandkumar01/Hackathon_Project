@@ -26,8 +26,8 @@ public class TC003_CarDetails extends CrossBrowsing {
 
 	@Test(priority = 1)
 	public void testWriteCarDetails() {
-		LinkedHashMap<String, List<String>> bikeDetailsMap = car.getUpcomingCarDetails();
-		WriteExcelData.writeCarDetails(bikeDetailsMap, filepath);
+		LinkedHashMap<String, List<String>> carDetailsMap = car.getUpcomingCarDetails();
+		WriteExcelData.writeCarDetails(carDetailsMap, filepath);
 	}
 
 }
