@@ -1,6 +1,6 @@
 Feature: Health Insurance
 
-  @sanity
+  @sanity @regression
   Scenario: Extracting all health insurance plan
     Given user navigates to zigwheels website
     When user hover on More section
