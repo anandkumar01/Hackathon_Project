@@ -11,11 +11,5 @@
       <class name="testCases.TC005_HealthInsurance"/>
     </classes>
   </test> <!-- Test -->
-  
-  <test name="Chrome Test">
-	  <parameter name="browser" value="Edge"></parameter>
-    <classes>
-      <class name="testCases.TC01_IdentifyNewBikes"/>
-    </classes>
-  </test> <!-- Test -->
+
 </suite> <!-- Suite -->

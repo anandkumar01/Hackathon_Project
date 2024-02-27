@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-26T17:40:05 IST" name="Suite" finished-at="2024-02-26T17:46:11 IST" duration-ms="366322">
+  <suite started-at="2024-02-27T10:28:12 IST" name="Suite" finished-at="2024-02-27T10:34:11 IST" duration-ms="359246">
     <groups>
     </groups>
-    <test started-at="2024-02-26T17:40:05 IST" name="Chrome Test" finished-at="2024-02-26T17:46:11 IST" duration-ms="366322">
+    <test started-at="2024-02-27T10:28:12 IST" name="Chrome Test" finished-at="2024-02-27T10:34:11 IST" duration-ms="359246">
       <class name="testCases.TC004_UsedCarDetails">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-26T17:41:31 IST" name="initializeBrowser" finished-at="2024-02-26T17:41:40 IST" duration-ms="9058" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-27T10:30:08 IST" name="initializeBrowser" finished-at="2024-02-27T10:30:30 IST" duration-ms="21369" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,25 +18,25 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="testUsedCars()[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-26T17:41:40 IST" name="testUsedCars" finished-at="2024-02-26T17:42:27 IST" duration-ms="46789" status="PASS">
+        <test-method signature="testUsedCars()[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-27T10:30:30 IST" name="testUsedCars" finished-at="2024-02-27T10:30:43 IST" duration-ms="13435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUsedCars -->
-        <test-method signature="testWritePopularCarModel()[pri:1, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-26T17:42:27 IST" name="testWritePopularCarModel" finished-at="2024-02-26T17:42:27 IST" duration-ms="329" status="PASS">
+        <test-method signature="testWritePopularCarModel()[pri:1, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-27T10:30:43 IST" name="testWritePopularCarModel" finished-at="2024-02-27T10:30:43 IST" duration-ms="381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWritePopularCarModel -->
-        <test-method signature="testWriteAllPopularCarModelDetails()[pri:2, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-26T17:42:27 IST" name="testWriteAllPopularCarModelDetails" finished-at="2024-02-26T17:45:17 IST" duration-ms="169859" status="PASS">
+        <test-method signature="testWriteAllPopularCarModelDetails()[pri:2, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-27T10:30:43 IST" name="testWriteAllPopularCarModelDetails" finished-at="2024-02-27T10:33:07 IST" duration-ms="143297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWriteAllPopularCarModelDetails -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-26T17:45:17 IST" name="closeBrowser" finished-at="2024-02-26T17:45:18 IST" duration-ms="1263" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC004_UsedCarDetails@673fdbce]" started-at="2024-02-27T10:33:07 IST" name="closeBrowser" finished-at="2024-02-27T10:33:09 IST" duration-ms="2274" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testCases.TC004_UsedCarDetails -->
       <class name="testCases.TC005_HealthInsurance">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-26T17:45:18 IST" name="initializeBrowser" finished-at="2024-02-26T17:45:25 IST" duration-ms="6941" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-27T10:33:09 IST" name="initializeBrowser" finished-at="2024-02-27T10:33:20 IST" duration-ms="10710" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,25 +47,25 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="testHealthInsurance()[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-26T17:45:25 IST" name="testHealthInsurance" finished-at="2024-02-26T17:45:54 IST" duration-ms="28584" status="PASS">
+        <test-method signature="testHealthInsurance()[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-27T10:33:20 IST" name="testHealthInsurance" finished-at="2024-02-27T10:33:53 IST" duration-ms="33200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testHealthInsurance -->
-        <test-method signature="testWriteHealthInsuranceBrandName()[pri:1, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-26T17:45:54 IST" name="testWriteHealthInsuranceBrandName" finished-at="2024-02-26T17:46:09 IST" duration-ms="15454" status="PASS">
+        <test-method signature="testWriteHealthInsuranceBrandName()[pri:1, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-27T10:33:53 IST" name="testWriteHealthInsuranceBrandName" finished-at="2024-02-27T10:34:09 IST" duration-ms="15521" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWriteHealthInsuranceBrandName -->
-        <test-method signature="testWriteHealthInsurancePlan()[pri:2, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-26T17:46:09 IST" name="testWriteHealthInsurancePlan" finished-at="2024-02-26T17:46:10 IST" duration-ms="405" status="PASS">
+        <test-method signature="testWriteHealthInsurancePlan()[pri:2, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-27T10:34:09 IST" name="testWriteHealthInsurancePlan" finished-at="2024-02-27T10:34:09 IST" duration-ms="584" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWriteHealthInsurancePlan -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-26T17:46:10 IST" name="closeBrowser" finished-at="2024-02-26T17:46:11 IST" duration-ms="1317" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC005_HealthInsurance@5965d37]" started-at="2024-02-27T10:34:09 IST" name="closeBrowser" finished-at="2024-02-27T10:34:11 IST" duration-ms="1683" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testCases.TC005_HealthInsurance -->
       <class name="testCases.TC003_CarDetails">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-26T17:41:12 IST" name="initializeBrowser" finished-at="2024-02-26T17:41:20 IST" duration-ms="7781" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-27T10:29:41 IST" name="initializeBrowser" finished-at="2024-02-27T10:29:49 IST" duration-ms="8089" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,21 +76,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="testCarDetails()[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-26T17:41:20 IST" name="testCarDetails" finished-at="2024-02-26T17:41:28 IST" duration-ms="8054" status="PASS">
+        <test-method signature="testCarDetails()[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-27T10:29:49 IST" name="testCarDetails" finished-at="2024-02-27T10:30:05 IST" duration-ms="16200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCarDetails -->
-        <test-method signature="testWriteCarDetails()[pri:1, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-26T17:41:28 IST" name="testWriteCarDetails" finished-at="2024-02-26T17:41:30 IST" duration-ms="1822" status="PASS">
+        <test-method signature="testWriteCarDetails()[pri:1, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-27T10:30:05 IST" name="testWriteCarDetails" finished-at="2024-02-27T10:30:07 IST" duration-ms="2057" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWriteCarDetails -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-26T17:41:30 IST" name="closeBrowser" finished-at="2024-02-26T17:41:31 IST" duration-ms="1135" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC003_CarDetails@1a245833]" started-at="2024-02-27T10:30:07 IST" name="closeBrowser" finished-at="2024-02-27T10:30:08 IST" duration-ms="1216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testCases.TC003_CarDetails -->
       <class name="testCases.TC001_InvalidGoogleLogin">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-26T17:40:05 IST" name="initializeBrowser" finished-at="2024-02-26T17:40:13 IST" duration-ms="7733" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-27T10:28:12 IST" name="initializeBrowser" finished-at="2024-02-27T10:28:37 IST" duration-ms="25340" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -101,17 +101,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="testInvalidGoogleLogin()[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-26T17:40:13 IST" name="testInvalidGoogleLogin" finished-at="2024-02-26T17:40:20 IST" duration-ms="7138" status="PASS">
+        <test-method signature="testInvalidGoogleLogin()[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-27T10:28:37 IST" name="testInvalidGoogleLogin" finished-at="2024-02-27T10:29:09 IST" duration-ms="31689" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInvalidGoogleLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-26T17:40:20 IST" name="closeBrowser" finished-at="2024-02-26T17:40:21 IST" duration-ms="1430" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC001_InvalidGoogleLogin@65987993]" started-at="2024-02-27T10:29:09 IST" name="closeBrowser" finished-at="2024-02-27T10:29:10 IST" duration-ms="1176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testCases.TC001_InvalidGoogleLogin -->
       <class name="testCases.TC002_BikeDetails">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-26T17:40:21 IST" name="initializeBrowser" finished-at="2024-02-26T17:40:27 IST" duration-ms="6020" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-27T10:29:10 IST" name="initializeBrowser" finished-at="2024-02-27T10:29:20 IST" duration-ms="9857" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -122,15 +122,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="testBikeDetails()[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-26T17:40:27 IST" name="testBikeDetails" finished-at="2024-02-26T17:41:05 IST" duration-ms="38022" status="PASS">
+        <test-method signature="testBikeDetails()[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-27T10:29:20 IST" name="testBikeDetails" finished-at="2024-02-27T10:29:32 IST" duration-ms="12529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBikeDetails -->
-        <test-method signature="testWriteBikeDetails()[pri:1, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-26T17:41:05 IST" name="testWriteBikeDetails" finished-at="2024-02-26T17:41:11 IST" duration-ms="5525" status="PASS">
+        <test-method signature="testWriteBikeDetails()[pri:1, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-27T10:29:32 IST" name="testWriteBikeDetails" finished-at="2024-02-27T10:29:39 IST" duration-ms="7120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWriteBikeDetails -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-26T17:41:11 IST" name="closeBrowser" finished-at="2024-02-26T17:41:12 IST" duration-ms="1499" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testCases.TC002_BikeDetails@4007f65e]" started-at="2024-02-27T10:29:39 IST" name="closeBrowser" finished-at="2024-02-27T10:29:41 IST" duration-ms="1344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
