@@ -11,9 +11,17 @@ public class TC001_InvalidGoogleLogin extends CrossBrowsing {
 	@Test
 	public void testInvalidGoogleLogin() {
 		login = new InvalidGoogleLoginPage(driver);
+
+		logger.info("Clicked Login button");
 		login.clickLoginButton();
+
+		logger.info("Clicked Google Account");
 		login.clickGoogleAccount();
+
+		logger.info("Entered random email");
 		login.enterRandomEmail();
+
+		logger.info("Error message printed");
 		login.printErrorMessage();
 	}
 

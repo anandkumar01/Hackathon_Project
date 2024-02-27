@@ -18,10 +18,20 @@ public class TC002_BikeDetails extends CrossBrowsing {
 	public void testBikeDetails() throws IOException {
 		// Pass the WebDriver instance to the BikeDetailsPage constructor
 		bike = new BikeDetailsPage(driver);
+
+		logger.info("Hover on New Bikes");
 		bike.hoverNewBikes();
+
+		logger.info("Clicked upcomming bikes");
 		bike.clickUpcomingBikes();
+
+		logger.info("Selected manufacturer name");
 		bike.selectManufacturer();
+
+		logger.info("Clicked view more option");
 		bike.clickToViewMore();
+
+		logger.info("Printed upcomming bike details");
 		bike.printUpcomingBikeDetails();
 	}
 
