@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name=" Edge Test(failed)">
+    <parameter name="browser" value="Edge"/>
+    <classes>
+      <class name="testCases.TC004_UsedCarDetails">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="testWriteAllPopularCarModelDetails"/>
+        </methods>
+      </class> <!-- testCases.TC004_UsedCarDetails -->
+      <class name="testCases.TC003_CarDetails">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="testCarDetails"/>
+        </methods>
+      </class> <!-- testCases.TC003_CarDetails -->
+    </classes>
+  </test> <!--  Edge Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
