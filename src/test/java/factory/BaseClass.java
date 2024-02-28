@@ -6,6 +6,8 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,8 +19,10 @@ public class BaseClass {
 
 	static WebDriver driver;
 	static Properties property;
+	static Logger logger;
 
 	public static WebDriver initializeBrowser() throws IOException {
+
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -74,5 +78,10 @@ public class BaseClass {
 			property.load(file);
 		}
 		return property;
+	}
+
+	public static Logger getLogger() {
+		logger = LogManager.getLogger();
+		return logger;
 	}
 }

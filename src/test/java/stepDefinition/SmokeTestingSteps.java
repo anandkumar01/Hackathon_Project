@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
@@ -19,6 +20,7 @@ public class SmokeTestingSteps {
 	UsedCarPage usedcar;
 	HealthInsurancePage health;
 	InvalidGoogleLoginPage google;
+	Logger logger = BaseClass.getLogger();
 
 	@Given("user navigates to the zigwheels website")
 	public void user_navigates_to_the_zigwheels_website() {
@@ -31,6 +33,7 @@ public class SmokeTestingSteps {
 		// Write code here that turns the phrase above into concrete actions
 		bike = new BikeDetailsPage(BaseClass.getDriver());
 		bike.zigwheelspage();
+		logger.info("Zigwheels website launched");
 	}
 
 	@Given("user is currently on the zigwheels website")
@@ -62,25 +65,31 @@ public class SmokeTestingSteps {
 		// Write code here that turns the phrase above into concrete actions
 		bike = new BikeDetailsPage(BaseClass.getDriver());
 		bike.checkNewBikes();
+		logger.info("New Bikes displayed");
 	}
 
-	@When("user hovers the mouse over the New Bikes")
-	public void user_hovers_the_mouse_over_the_as_new_bikes() {
+	@When("user hovers the mouse over the {string}")
+	public void user_hovers_the_mouse_over_the_as(String newBikes) {
 		// Write code here that turns the phrase above into concrete actions
-		bike.hoverNewBikes();
+		bike.hoverNewBikes(newBikes);
+		logger.info("Hover on New Bikes");
 	}
 
 	@Then("check whether upcoming bikes is present in dropdown")
 	public void check_whether_upcoming_bikes_is_present_in_dropdown() {
 		// Write code here that turns the phrase above into concrete actions
 		bike.checkUpcomingBikes();
+		logger.info("Upcoming Bikes displayed");
 	}
 
 	@Then("user should see relevant search results for Honda bikes")
 	public void user_should_see_relevant_search_results_for_honda_bikes() {
 		// Write code here that turns the phrase above into concrete actions
 		bike.clickUpcomingBikes();
-		bike.validateHondaBikes();
+		logger.info("Clicked upcomming bikes");
+
+		bike.validateAllBikes();
+		logger.info("All Bikes displayed");
 	}
 
 	@Then("check whether New Cars is present in the header section")
@@ -88,25 +97,31 @@ public class SmokeTestingSteps {
 		// Write code here that turns the phrase above into concrete actions
 		car = new CarDetailsPage(BaseClass.getDriver());
 		car.checkNewCars();
+		logger.info("New Cars displayed");
 	}
 
-	@When("user hovers the mouse over the New Cars")
-	public void user_hovers_the_mouse_over_the_as_new_cars() {
+	@When("user hovers the mouse over the {string} as new cars")
+	public void user_hovers_the_mouse_over_the_as_new_cars(String newCars) {
 		// Write code here that turns the phrase above into concrete actions
-		car.hoverNewCars();
+		car.hoverNewCars(newCars);
+		logger.info("Hover on New Cars");
 	}
 
 	@Then("check whether upcoming cars is present in dropdown")
 	public void check_whether_upcoming_cars_is_present_in_dropdown() {
 		// Write code here that turns the phrase above into concrete actions
 		car.checkUpcomingCars();
+		logger.info("Upcoming Bikes displayed");
 	}
 
 	@Then("user should see relevant search results for Tata Cars")
 	public void user_should_see_relevant_search_results_for_tata_cars() {
 		// Write code here that turns the phrase above into concrete actions
 		car.clickUpcomingCars();
-		car.validateHondaCars();
+		logger.info("Clicked upcomming cars");
+
+		car.validateAllCars();
+		logger.info("All Cars displayed");
 	}
 
 	@When("user hovers on Used Cars")
@@ -114,24 +129,29 @@ public class SmokeTestingSteps {
 		// Write code here that turns the phrase above into concrete actions
 		usedcar = new UsedCarPage(BaseClass.getDriver());
 		usedcar.hoverUsedCars();
+		logger.info("Hover on Used Cars");
+
 	}
 
 	@Then("check whether Chennai city is present in the list")
 	public void check_whether_chennai_city_is_present_in_the_list() {
 		// Write code here that turns the phrase above into concrete actions
 		usedcar.checkChennaiCity();
+		logger.info("Chennai city displayed");
 	}
 
 	@When("user click at Chennai option")
 	public void user_click_at_chennai_option() {
 		// Write code here that turns the phrase above into concrete actions
 		usedcar.clickChennai();
+		logger.info("Clicked Chennai city");
 	}
 
 	@Then("user should see relevant search results for Used Cars in Chennai")
 	public void user_should_see_relevant_search_results_for_used_cars_in_chennai() {
 		// Write code here that turns the phrase above into concrete actions
 		usedcar.validateUsedCarsForChennai();
+		logger.info("All used cars displayed");
 	}
 
 	@When("user hovers the mouse over the More section")
@@ -139,12 +159,14 @@ public class SmokeTestingSteps {
 		// Write code here that turns the phrase above into concrete actions
 		health = new HealthInsurancePage(BaseClass.getDriver());
 		health.hoverMore();
+		logger.info("Hover on More");
 	}
 
 	@Then("check whether Health Insurance is present in the list")
 	public void check_whether_health_insurance_is_present_in_the_list() {
 		// Write code here that turns the phrase above into concrete actions
 		health.checkHealthInsurance();
+		logger.info("Health Insurance displayed");
 	}
 
 }

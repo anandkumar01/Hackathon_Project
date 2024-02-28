@@ -55,18 +55,23 @@ public class BikeDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> bikelaunchdate;
 
-	public void hoverNewBikes() {
+	public void hoverNewBikes(String newBikes) {
 		explicitWait(newbikes);
-		hoverOnElement(newbikes);
+		for (WebElement ele : navheaderlist) {
+			if (ele.getText().equals(newBikes)) {
+				hoverOnElement(ele);
+				break;
+			}
+		}
 	}
 
 	public void clickUpcomingBikes() {
 		upcomingbike.click();
 	}
 
-	public void selectManufacturer() {
+	public void selectManufacturer(String manufacturer) {
 		Select select = new Select(selectmanufacturer);
-		select.selectByVisibleText("Honda");
+		select.selectByVisibleText(manufacturer);
 		captureFullPageScreenshot(driver, filepath);
 	}
 
@@ -146,13 +151,13 @@ public class BikeDetailsPage extends BasePage {
 		}
 	}
 
-	public void validateHondaBikes() {
+	public void validateAllBikes() {
 		explicitWait(bikeheading);
 		boolean heading = bikeheading.isDisplayed();
 		if (heading) {
-			System.out.println("All upcoming Honda Bikes are displayed successfully..");
+			System.out.println("All upcoming Bikes are displayed successfully..");
 		} else {
-			System.out.println("All upcoming Honda Bikes are not visible..");
+			System.out.println("All upcoming Bikes are not visible..");
 		}
 	}
 

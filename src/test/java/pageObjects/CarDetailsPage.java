@@ -54,19 +54,24 @@ public class CarDetailsPage extends BasePage {
 	@FindBy(xpath = "//a[@data-track-label='model-name']/following-sibling::div[2]")
 	List<WebElement> carlaunchdate;
 
-	public void hoverNewCars() {
+	public void hoverNewCars(String newCars) {
 		zigwheels.click();
 		explicitWait(newcars);
-		hoverOnElement(newcars);
+		for (WebElement ele : navheaderlist) {
+			if (ele.getText().equals(newCars)) {
+				hoverOnElement(ele);
+				break;
+			}
+		}
 	}
 
 	public void clickUpcomingCars() {
 		upcomingcar.click();
 	}
 
-	public void selectManufacturer() {
+	public void selectManufacturer(String manufacturer) {
 		Select select = new Select(selectmanufacturer);
-		select.selectByVisibleText("Tata");
+		select.selectByVisibleText(manufacturer);
 	}
 
 	public void clickToViewMore() {
@@ -132,13 +137,13 @@ public class CarDetailsPage extends BasePage {
 		}
 	}
 
-	public void validateHondaCars() {
+	public void validateAllCars() {
 		explicitWait(carheading);
 		boolean heading = carheading.isDisplayed();
 		if (heading) {
-			System.out.println("All upcoming Tata Cars are displayed successfully..");
+			System.out.println("All upcoming Cars are displayed successfully..");
 		} else {
-			System.out.println("All upcoming Tata Cars are not visible..");
+			System.out.println("All upcoming Cars are not visible..");
 		}
 	}
 
