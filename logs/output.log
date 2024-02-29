@@ -1,24 +1,39 @@
-09:46:31.479 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet11.xml'
-09:46:31.488 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet12.xml'
-09:46:31.490 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet13.xml'
-09:46:32.354 [main] INFO  factory.BaseClass - Printed Health Insurance plan
-09:46:32.865 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
-09:46:32.870 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
-09:46:32.873 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
-09:46:32.876 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
-09:46:32.883 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
-09:46:32.885 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
-09:46:32.886 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
-09:46:32.893 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
-09:46:32.896 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet2.xml'
-09:46:32.897 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet3.xml'
-09:46:32.898 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet4.xml'
-09:46:32.899 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet5.xml'
-09:46:32.899 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet6.xml'
-09:46:32.901 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet7.xml'
-09:46:32.903 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet8.xml'
-09:46:32.908 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet9.xml'
-09:46:32.908 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet10.xml'
-09:46:32.910 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet11.xml'
-09:46:32.911 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet12.xml'
-09:46:32.912 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet13.xml'
+14:57:04.131 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+14:57:04.149 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+14:57:04.149 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+14:57:04.153 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
+14:57:04.155 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet2.xml'
+14:57:04.156 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet3.xml'
+14:57:04.157 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet4.xml'
+14:57:08.533 [main] INFO  factory.BaseClass - Hover on New Cars
+14:57:10.157 [main] INFO  factory.BaseClass - Clicked upcomming cars
+14:57:11.698 [main] INFO  factory.BaseClass - Selected manufacturer name
+14:57:13.008 [main] INFO  factory.BaseClass - Clicked view more option
+14:57:16.444 [main] INFO  factory.BaseClass - Printed upcomming car details
+14:57:18.310 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
+14:57:18.314 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
+14:57:18.319 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
+14:57:18.320 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
+14:57:18.323 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+14:57:18.324 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+14:57:18.325 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+14:57:18.329 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
+14:57:18.330 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet2.xml'
+14:57:18.332 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet3.xml'
+14:57:18.334 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet4.xml'
+14:57:22.379 [main] INFO  factory.BaseClass - Hover on Used Cars
+14:57:28.654 [main] INFO  factory.BaseClass - Clicked Chennai
+14:57:29.057 [main] INFO  factory.BaseClass - Scrolled to popular model
+14:57:29.796 [main] INFO  factory.BaseClass - Printed popular car model names
+14:57:30.062 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save content types part
+14:57:30.067 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save package relationships
+14:57:30.070 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/app.xml'
+14:57:30.071 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'docProps/core.xml'
+14:57:30.075 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/sharedStrings.xml'
+14:57:30.076 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/styles.xml'
+14:57:30.077 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/workbook.xml'
+14:57:30.083 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet1.xml'
+14:57:30.084 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet2.xml'
+14:57:30.085 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet3.xml'
+14:57:30.087 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet4.xml'
+14:57:30.531 [main] INFO  factory.BaseClass - Printed all popular car model details

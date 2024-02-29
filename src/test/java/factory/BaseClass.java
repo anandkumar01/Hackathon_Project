@@ -26,7 +26,7 @@ public class BaseClass {
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			// os
+			// setting up operating system for remote
 			if (getProperties().getProperty("os").equalsIgnoreCase("windows")) {
 				capabilities.setPlatform(Platform.WIN11);
 			} else if (getProperties().getProperty("os").equalsIgnoreCase("mac")) {
@@ -34,7 +34,7 @@ public class BaseClass {
 			} else {
 				System.out.println("No matching OS..");
 			}
-			// browser
+			// setting up the browser for remote
 			switch (getProperties().getProperty("browser").toLowerCase()) {
 			case "chrome":
 				capabilities.setBrowserName("chrome");
@@ -48,7 +48,10 @@ public class BaseClass {
 
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 
+			// setting up the environment as local machine
 		} else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
+
+			// setting up the browser for local machine
 			switch (getProperties().getProperty("browser").toLowerCase()) {
 			case "chrome":
 				driver = new ChromeDriver();
@@ -71,6 +74,7 @@ public class BaseClass {
 		return driver;
 	}
 
+	// creating a method to fetch th data from properties file
 	public static Properties getProperties() throws IOException {
 		String propertyFile = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
 		try (FileReader file = new FileReader(propertyFile)) {
@@ -80,6 +84,7 @@ public class BaseClass {
 		return property;
 	}
 
+	// creating a method for loggers
 	public static Logger getLogger() {
 		logger = LogManager.getLogger();
 		return logger;
