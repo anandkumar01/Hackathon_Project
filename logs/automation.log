@@ -45,3 +45,18 @@
 15:46:49.559 [main] INFO  - Printed all popular car model details
 15:49:14.259 [main] INFO  - Hover More
 15:49:15.780 [main] INFO  - Clicked Health Insurance
+17:14:03.466 [main] INFO  - Clicked Login button
+17:14:04.160 [main] INFO  - Clicked Google Account
+17:14:07.142 [main] INFO  - Entered random email
+17:14:08.167 [main] INFO  - Error message printed
+17:14:09.436 [main] INFO  - Hover on New Bikes
+17:14:11.087 [main] INFO  - Clicked upcomming bikes
+17:14:13.471 [main] INFO  - Selected manufacturer name
+17:14:14.177 [main] INFO  - Clicked to view more
+17:14:17.924 [main] INFO  - Printed upcomming bike details
+17:14:31.981 [main] INFO  - Hover on New Cars
+17:14:37.277 [main] INFO  - Clicked upcomming cars
+17:14:39.271 [main] INFO  - Selected manufacturer name
+17:14:40.109 [main] INFO  - Clicked view more option
+17:19:08.983 [main] INFO  - Clicked Login button
+17:19:09.427 [main] INFO  - Clicked Google Account
