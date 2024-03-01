@@ -95,7 +95,8 @@ public class HealthInsurancePage extends BasePage {
 	}
 
 	public void fillBasicDetails() throws IOException, InterruptedException {
-		property = new BaseClass().getProperties();
+		new BaseClass();
+		property = BaseClass.getProperties();
 
 		explicitWait(scroll);
 		scrollToElement(scroll);

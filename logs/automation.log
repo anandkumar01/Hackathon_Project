@@ -1,0 +1,47 @@
+15:33:09.877 [main] INFO  - Clicked Login button
+15:33:10.765 [main] INFO  - Clicked Google Account
+15:34:12.350 [main] INFO  - Hover on New Bikes
+15:34:35.890 [main] INFO  - Hover on New Cars
+15:37:03.844 [main] INFO  - Clicked Login button
+15:37:04.338 [main] INFO  - Clicked Google Account
+15:38:05.710 [main] INFO  - Hover on New Bikes
+15:38:07.291 [main] INFO  - Clicked upcomming bikes
+15:38:09.835 [main] INFO  - Selected manufacturer name
+15:38:10.457 [main] INFO  - Clicked to view more
+15:38:14.267 [main] INFO  - Printed upcomming bike details
+15:38:25.203 [main] INFO  - Hover on New Cars
+15:38:27.694 [main] INFO  - Clicked upcomming cars
+15:38:29.388 [main] INFO  - Selected manufacturer name
+15:38:30.282 [main] INFO  - Clicked view more option
+15:38:35.919 [main] INFO  - Printed upcomming car details
+15:38:41.533 [main] INFO  - Hover on Used Cars
+15:38:54.710 [main] INFO  - Clicked Chennai
+15:38:54.979 [main] INFO  - Scrolled to popular model
+15:38:55.390 [main] INFO  - Printed popular car model names
+15:38:55.964 [main] INFO  - Printed all popular car model details
+15:40:52.902 [main] INFO  - Hover More
+15:40:55.197 [main] INFO  - Clicked Health Insurance
+15:41:03.255 [main] INFO  - Filled Health Insurance basic details
+15:41:19.453 [main] INFO  - Printed Health Insurance brand names
+15:41:35.434 [main] INFO  - Printed Health Insurance plan
+15:45:50.163 [main] INFO  - Clicked Login button
+15:45:51.002 [main] INFO  - Clicked Google Account
+15:45:55.056 [main] INFO  - Entered random email
+15:45:56.033 [main] INFO  - Error message printed
+15:45:57.247 [main] INFO  - Hover on New Bikes
+15:45:59.079 [main] INFO  - Clicked upcomming bikes
+15:46:03.264 [main] INFO  - Selected manufacturer name
+15:46:04.305 [main] INFO  - Clicked to view more
+15:46:12.230 [main] INFO  - Printed upcomming bike details
+15:46:22.423 [main] INFO  - Hover on New Cars
+15:46:24.004 [main] INFO  - Clicked upcomming cars
+15:46:25.710 [main] INFO  - Selected manufacturer name
+15:46:26.386 [main] INFO  - Clicked view more option
+15:46:31.713 [main] INFO  - Printed upcomming car details
+15:46:37.443 [main] INFO  - Hover on Used Cars
+15:46:48.006 [main] INFO  - Clicked Chennai
+15:46:48.311 [main] INFO  - Scrolled to popular model
+15:46:48.873 [main] INFO  - Printed popular car model names
+15:46:49.559 [main] INFO  - Printed all popular car model details
+15:49:14.259 [main] INFO  - Hover More
+15:49:15.780 [main] INFO  - Clicked Health Insurance

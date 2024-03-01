@@ -72,7 +72,6 @@ public class BikeDetailsPage extends BasePage {
 	public void selectManufacturer(String manufacturer) {
 		Select select = new Select(selectmanufacturer);
 		select.selectByVisibleText(manufacturer);
-		captureFullPageScreenshot(driver, filepath);
 	}
 
 	public void clickToViewMore() throws IOException {

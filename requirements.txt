@@ -1,0 +1,37 @@
+Cucumber plugin [latest version]
+
+dependencies to add-
+
+selenium-java
+ <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+
+webdrivermanager
+<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+
+cucumber-java
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+
+cucumber-junit
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+
+extentreports-cucumber7-adapter
+<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+
+extentreports
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+
+apache poi
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+
+apache poi-ooxml
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
+log4j-core
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+
+log4j-api
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+
+
+maven-surefire-plugin
+maven-compiler-plugin
