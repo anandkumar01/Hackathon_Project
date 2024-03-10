@@ -84,14 +84,14 @@ public class HealthInsurancePage extends BasePage {
 	WebElement disclaimerscroll;
 
 	public void hoverMore() {
-		zigwheels.click();
+		clickToElement(zigwheels);
 		explicitWait(moresection);
 		hoverOnElement(moresection);
 	}
 
 	public void clickHealthInsurance() {
 		explicitWait(healthinsurance);
-		healthinsurance.click();
+		clickToElement(healthinsurance);
 	}
 
 	public void fillBasicDetails() throws IOException, InterruptedException {
@@ -100,21 +100,21 @@ public class HealthInsurancePage extends BasePage {
 
 		explicitWait(scroll);
 		scrollToElement(scroll);
-		checkmale.click();
+		clickToElement(checkmale);
 		inputname.sendKeys(property.getProperty("name"));
 		inputphone.sendKeys(property.getProperty("phone"));
 
 		Thread.sleep(2000);
-		viewplan.click();
+		clickToElement(viewplan);
 
 		explicitWait(checkyou);
-		checkyou.click();
+		clickToElement(checkyou);
 
-		continuebtn.click();
-		clickage.click();
+		clickToElement(continuebtn);
+		clickToElement(clickage);
 
 		explicitWait(selectage);
-		selectage.click();
+		clickToElement(selectage);
 		inputpincode.sendKeys(property.getProperty("pincode"));
 
 		explicitWait(continueBtn);
@@ -122,9 +122,9 @@ public class HealthInsurancePage extends BasePage {
 
 		explicitWait(checkbox);
 		if (checkbox.isEnabled()) {
-			continuebtnn.click();
+			clickToElement(continuebtnn);
 		} else {
-			checkbox.click();
+			clickToElement(checkbox);
 		}
 	}
 
@@ -141,7 +141,7 @@ public class HealthInsurancePage extends BasePage {
 
 	public void printHealthInsuranceBrandName() throws InterruptedException {
 		List<String> brandName = getHealthInsuranceBrandName();
-		System.out.println("\nAll Health Insurance plan are displayed below :");
+		System.out.println("All Health Insurance plan are displayed below :");
 		for (int i = 0; i < brandName.size(); i++) {
 			System.out.println((i + 1) + ". " + brandName.get(i));
 		}
@@ -174,7 +174,7 @@ public class HealthInsurancePage extends BasePage {
 		} else {
 			System.out.println("Health Insurance is not visible..");
 		}
-		zigwheels.click();
+		clickToElement(zigwheels);
 
 	}
 

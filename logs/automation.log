@@ -60,3 +60,84 @@
 17:14:40.109 [main] INFO  - Clicked view more option
 17:19:08.983 [main] INFO  - Clicked Login button
 17:19:09.427 [main] INFO  - Clicked Google Account
+12:36:07.764 [main] INFO  - Clicked Login button
+12:36:08.626 [main] INFO  - Clicked Google Account
+12:36:50.815 [main] INFO  - Clicked Login button
+12:36:51.684 [main] INFO  - Clicked Google Account
+12:38:31.169 [main] INFO  - Clicked Login button
+12:38:31.805 [main] INFO  - Clicked Google Account
+12:39:33.749 [main] INFO  - Hover on New Bikes
+12:39:35.921 [main] INFO  - Clicked upcomming bikes
+12:39:38.066 [main] INFO  - Selected manufacturer name
+12:39:39.651 [main] INFO  - Clicked to view more
+12:39:42.145 [main] INFO  - Printed upcomming bike details
+12:39:48.249 [main] INFO  - Hover on New Cars
+12:39:49.798 [main] INFO  - Clicked upcomming cars
+12:39:51.154 [main] INFO  - Selected manufacturer name
+12:39:51.882 [main] INFO  - Clicked view more option
+12:39:54.634 [main] INFO  - Printed upcomming car details
+12:39:59.579 [main] INFO  - Hover on Used Cars
+12:40:03.860 [main] INFO  - Clicked Chennai
+12:40:04.514 [main] INFO  - Scrolled to popular model
+12:40:05.124 [main] INFO  - Printed popular car model names
+12:40:05.779 [main] INFO  - Printed all popular car model details
+12:42:08.456 [main] INFO  - Clicked Login button
+12:42:11.564 [main] INFO  - Clicked Google Account
+12:44:05.802 [main] INFO  - Zigwheels website launched
+12:44:14.450 [main] INFO  - New Bikes displayed
+12:44:15.141 [main] INFO  - Hover on New Bikes
+12:44:15.761 [main] INFO  - Upcoming Bikes displayed
+12:44:16.911 [main] INFO  - Clicked upcomming bikes
+12:44:17.401 [main] INFO  - All Bikes displayed
+12:44:18.165 [main] INFO  - New Cars displayed
+12:44:20.639 [main] INFO  - Hover on New Cars
+12:44:21.512 [main] INFO  - Upcoming Bikes displayed
+12:44:22.615 [main] INFO  - Clicked upcomming cars
+12:44:22.886 [main] INFO  - All Cars displayed
+12:44:25.294 [main] INFO  - Hover on Used Cars
+12:44:26.259 [main] INFO  - Chennai city displayed
+12:44:29.035 [main] INFO  - Clicked Chennai city
+12:44:29.512 [main] INFO  - All used cars displayed
+12:44:31.709 [main] INFO  - Hover on More
+12:44:33.305 [main] INFO  - Health Insurance displayed
+12:45:23.519 [main] INFO  - Zigwheels website launched
+12:45:27.694 [main] INFO  - New Bikes displayed
+12:45:28.525 [main] INFO  - Hover on New Bikes
+12:45:29.127 [main] INFO  - Upcoming Bikes displayed
+12:45:30.175 [main] INFO  - Clicked upcomming bikes
+12:45:30.566 [main] INFO  - All Bikes displayed
+12:45:31.053 [main] INFO  - New Cars displayed
+12:45:33.008 [main] INFO  - Hover on New Cars
+12:45:33.846 [main] INFO  - Upcoming Bikes displayed
+12:45:34.805 [main] INFO  - Clicked upcomming cars
+12:45:35.012 [main] INFO  - All Cars displayed
+12:45:37.489 [main] INFO  - Hover on Used Cars
+12:45:38.277 [main] INFO  - Chennai city displayed
+12:45:41.284 [main] INFO  - Clicked Chennai city
+12:45:41.790 [main] INFO  - All used cars displayed
+12:45:44.000 [main] INFO  - Hover on More
+12:45:45.523 [main] INFO  - Health Insurance displayed
+12:47:17.850 [main] INFO  - Clicked Login button
+12:47:18.608 [main] INFO  - Clicked Google Account
+12:47:20.564 [main] INFO  - Entered random email
+12:47:21.425 [main] INFO  - Error message printed
+12:47:23.208 [main] INFO  - Hover on New Bikes
+12:47:24.651 [main] INFO  - Clicked upcomming bikes
+12:47:25.789 [main] INFO  - Selected manufacturer name
+12:47:27.103 [main] INFO  - Clicked to view more
+12:47:29.619 [main] INFO  - Printed upcomming bike details
+12:47:35.557 [main] INFO  - Hover on New Cars
+12:47:37.065 [main] INFO  - Clicked upcomming cars
+12:47:38.316 [main] INFO  - Selected manufacturer name
+12:47:38.839 [main] INFO  - Clicked view more option
+12:47:41.590 [main] INFO  - Printed upcomming car details
+12:47:45.462 [main] INFO  - Hover on Used Cars
+12:47:49.448 [main] INFO  - Clicked Chennai
+12:47:49.760 [main] INFO  - Scrolled to popular model
+12:47:50.262 [main] INFO  - Printed popular car model names
+12:47:50.909 [main] INFO  - Printed all popular car model details
+12:49:45.930 [main] INFO  - Hover More
+12:49:48.904 [main] INFO  - Clicked Health Insurance
+12:49:58.481 [main] INFO  - Filled Health Insurance basic details
+12:50:14.553 [main] INFO  - Printed Health Insurance brand names
+12:50:30.422 [main] INFO  - Printed Health Insurance plan

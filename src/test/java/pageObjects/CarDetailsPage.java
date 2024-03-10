@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,7 +65,7 @@ public class CarDetailsPage extends BasePage {
 	}
 
 	public void clickUpcomingCars() {
-		upcomingcar.click();
+		clickToElement(upcomingcar);
 	}
 
 	public void selectManufacturer(String manufacturer) {
@@ -75,10 +74,9 @@ public class CarDetailsPage extends BasePage {
 	}
 
 	public void clickToViewMore() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 		scrollToElement(scroll);
 		explicitWait(viewmore);
-		js.executeScript("arguments[0].click();", viewmore);
+		clickToElement(viewmore);
 	}
 
 	public LinkedHashMap<String, List<String>> getUpcomingCarDetails() {

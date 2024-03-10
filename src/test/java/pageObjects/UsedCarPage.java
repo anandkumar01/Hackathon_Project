@@ -3,7 +3,6 @@ package pageObjects;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,13 +60,13 @@ public class UsedCarPage extends BasePage {
 	List<WebElement> modelYears;
 
 	public void hoverUsedCars() {
-		zigwheels.click();
+		clickToElement(zigwheels);
 		explicitWait(usedcar);
 		hoverOnElement(usedcar);
 	}
 
 	public void clickChennai() {
-		chennai.click();
+		clickToElement(chennai);
 	}
 
 	public void scrollToPopularModel() {
@@ -86,15 +85,14 @@ public class UsedCarPage extends BasePage {
 	public void printPopularCarModels() {
 		List<String> carModel = getPopularCarModels();
 
-		System.out.println("\nAll popular car models are displayed below :");
+		System.out.println("All popular car models are displayed below :");
 		for (int i = 0; i < carModel.size(); i++) {
 			System.out.println((i + 1) + ". " + carModel.get(i));
 		}
 	}
 
 	public void clickCheckBox(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", element);
+		clickToElement(element);
 	}
 
 	public List<List<List<String>>> getAllPopularCarModelDetails() throws InterruptedException {
